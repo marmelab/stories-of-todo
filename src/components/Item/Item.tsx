@@ -1,6 +1,6 @@
+import { Todo } from "@/types/todo";
+import { PriorityBadge } from "@components/PriorityBadge/PriorityBadge";
 import clsx from "clsx";
-import { Todo } from "../../types/todo";
-import { PriorityBadge } from "../PriorityBadge/PriorityBadge";
 
 export const Item = ({
   todo,

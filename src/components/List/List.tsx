@@ -1,8 +1,8 @@
+import { Todo } from "@/types/todo";
+import { Item } from "@components/Item/Item";
+import { useDeleteTodo, useUpdateTodo } from "@services/mutations";
+import { useTodos } from "@services/queries";
 import { SubmitHandler } from "react-hook-form";
-import { Todo } from "../../types/todo";
-import { Item } from "../Item/Item";
-import { useTodos } from "../../services/queries";
-import { useDeleteTodo, useUpdateTodo } from "../../services/mutations";
 
 export const List = () => {
   const { data, isPending, error } = useTodos();

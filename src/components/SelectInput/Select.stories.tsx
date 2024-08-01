@@ -1,11 +1,11 @@
+import { Todo } from "@/types/todo";
 import type { Meta, StoryObj } from "@storybook/react";
 import { FormProvider, useForm } from "react-hook-form";
-import { Todo } from "./../../types/todo";
-import { DateTimeInput } from "./DateTimeInput";
+import { SelectInput } from "./SelectInput";
 
-const meta: Meta<typeof DateTimeInput> = {
-  title: "Design System/Atoms/DateTimeInput",
-  component: DateTimeInput,
+const meta: Meta<typeof SelectInput> = {
+  title: "Design System/Atoms/Select",
+  component: SelectInput,
   decorators: [
     (Story) => {
       const formMethods = useForm<Todo>();
@@ -20,10 +20,11 @@ const meta: Meta<typeof DateTimeInput> = {
 
 export default meta;
 
-type Story = StoryObj<typeof DateTimeInput>;
+type Story = StoryObj<typeof SelectInput>;
 
 export const Default: Story = {
   args: {
-    name: "dueDate",
+    name: "priority",
+    options: ["high", "medium", "low"],
   },
 };

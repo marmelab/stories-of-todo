@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Toast } from "./Toast";
 import { Id, toast } from "react-toastify";
+import { Toast } from "./Toast";
 
 const meta: Meta<typeof Toast> = {
   title: "Design System/Atoms/Toast",

@@ -1,6 +1,6 @@
-import { FieldValues, useFormContext } from "react-hook-form";
-import { InputProps } from "../../types/input";
+import { InputProps } from "@/types/input";
 import clsx from "clsx";
+import { FieldValues, useFormContext } from "react-hook-form";
 
 export const Input = <T extends FieldValues>(props: InputProps<T>) => {
   const {

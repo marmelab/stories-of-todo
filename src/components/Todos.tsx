@@ -1,13 +1,13 @@
+import { Todo } from "@/types/todo";
+import { DateTimeInput } from "@components/DateTimeInput/DateTimeInput";
+import { Input } from "@components/Input/Input";
+import { List } from "@components/List/List";
+import { SelectInput } from "@components/SelectInput/SelectInput";
+import { Toast } from "@components/Toast/Toast";
+import { useCreateTodo } from "@services/mutations";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useCreateTodo } from "../services/mutations";
-import { Todo } from "../types/todo";
-import { Input } from "./Input/Input";
-import { List } from "./List/List";
-import { Toast } from "./Toast/Toast";
-import { DateTimeInput } from "./DateTimeInput/DateTimeInput";
-import { SelectInput } from "./SelectInput/SelectInput";
 
 export const Todos = () => {
   const createTodo = useCreateTodo({

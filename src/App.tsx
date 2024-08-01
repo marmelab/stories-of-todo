@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Todos } from "./ui/Todos";
+import { Todos } from "./components/Todos";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools/production";
 import "./App.css";
 

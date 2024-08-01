@@ -1,11 +1,11 @@
+import { Todo } from "@/types/todo";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Input } from "./Input";
 import { FormProvider, useForm } from "react-hook-form";
-import { Todo } from "../../types/todo";
+import { DateTimeInput } from "./DateTimeInput";
 
-const meta: Meta<typeof Input> = {
-  title: "Design System/Atoms/Input",
-  component: Input,
+const meta: Meta<typeof DateTimeInput> = {
+  title: "Design System/Atoms/DateTimeInput",
+  component: DateTimeInput,
   decorators: [
     (Story) => {
       const formMethods = useForm<Todo>();
@@ -20,10 +20,10 @@ const meta: Meta<typeof Input> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<typeof DateTimeInput>;
 
 export const Default: Story = {
   args: {
-    name: "title",
+    name: "dueDate",
   },
 };

@@ -1,5 +1,5 @@
+import { SelectProps } from "@/types/input";
 import { FieldValues, useFormContext } from "react-hook-form";
-import { SelectProps } from "../types/input";
 
 export const SelectInput = <T extends FieldValues>(props: SelectProps<T>) => {
   const { register } = useFormContext();
