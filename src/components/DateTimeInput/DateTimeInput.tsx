@@ -7,6 +7,7 @@ export const DateTimeInput = <T extends FieldValues>(props: InputProps<T>) => {
   return (
     <input
       type="datetime-local"
+      data-testId="datetime-input"
       defaultValue={new Date().toISOString().slice(0, 16)}
       className="input input-bordered input-lg w-full join-item"
       {...register(name)}
