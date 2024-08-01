@@ -1,22 +1,15 @@
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import {
-  useCreateTodo,
-  useDeleteTodo,
-  useUpdateTodo,
-} from "../services/mutations";
-import { useTodos } from "../services/queries";
-import { Todo } from "../types/todo";
-import { Input } from "./Input";
-import { List } from "./List";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Toast } from "./Toast";
+import { useCreateTodo } from "../services/mutations";
+import { Todo } from "../types/todo";
 import { DateTimeInput } from "./DateTimeInput";
+import { Input } from "./Input";
+import { List } from "./List";
 import { SelectInput } from "./SelectInput";
+import { Toast } from "./Toast";
 
 export const Todos = () => {
-  const { data, isPending, error } = useTodos();
-
   const createTodo = useCreateTodo({
     onSuccess: (data: Todo) => {
       toast.success(`Todo "${data.title}" created!`);
@@ -26,38 +19,18 @@ export const Todos = () => {
     },
   });
 
-  const updateTodos = useUpdateTodo();
-
-  const deteleTodo = useDeleteTodo();
-
   const formMethods = useForm<Todo>();
 
   const handleCreateTodoSubmit: SubmitHandler<Todo> = (data) => {
     createTodo.mutate(data);
   };
 
-  const toggleComplete: SubmitHandler<Todo> = (data) => {
-    updateTodos.mutate({ ...data, completed: !data.completed });
-  };
-
-  const handleDeleteTodo = (id: number) => {
-    deteleTodo.mutate(id);
-  };
-
-  if (isPending) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
   return (
     <>
       <FormProvider {...formMethods}>
         <form onSubmit={formMethods.handleSubmit(handleCreateTodoSubmit)}>
-          <div className="flex join">
-            <Input name="title" />
+          <Input name="title" />
+          <div className="flex join mt-1">
             <DateTimeInput name="dueDate" />
             <SelectInput name="priority" options={["low", "medium", "high"]} />
             <button
@@ -75,11 +48,7 @@ export const Todos = () => {
         </form>
       </FormProvider>
       <div className="divider" />
-      <List
-        todos={data}
-        toggleComplete={toggleComplete}
-        handleDeleteTodo={handleDeleteTodo}
-      />
+      <List />
       <Toast />
     </>
   );

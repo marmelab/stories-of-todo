@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { Todos } from "./Todos";
-import { MswWrapper } from "../msw/MswWrapper";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MswWrapper } from "../msw/MswWrapper";
+import { List } from "./List";
 
-const meta: Meta<typeof Todos> = {
-  title: "Application/Todos",
-  component: Todos,
+const queryClient = new QueryClient();
+
+const meta: Meta<typeof List> = {
+  title: "Application/List",
+  component: List,
   decorators: [
     (Story) => (
       <QueryClientProvider client={queryClient}>
@@ -20,10 +21,8 @@ const meta: Meta<typeof Todos> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Todos>;
+type Story = StoryObj<typeof List>;
 
-const queryClient = new QueryClient();
-
-export const Application: Story = {
-  args: {},
+export const Default: Story = {
+  render: () => <List />,
 };
