@@ -1,18 +1,29 @@
 import { FieldValues, useFormContext } from "react-hook-form";
 import { InputProps } from "../types/input";
+import clsx from "clsx";
 
 export const Input = <T extends FieldValues>(props: InputProps<T>) => {
-  const { register } = useFormContext();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+  console.log(errors);
   const { name, ...rest } = props;
   return (
-    <>
+    <div className="flex flex-col">
       <input
         type="text"
-        placeholder="What do you want to do?"
-        className="input input-bordered input-lg w-full max-w-xs join-item"
-        {...(register(name), { required: true })}
+        placeholder={
+          (errors[name] && (errors[name].message as string)) ??
+          "What do you want to do?"
+        }
+        className={clsx(
+          errors[name] && "input-error",
+          "input input-bordered input-lg w-full join-item"
+        )}
+        {...register(name, { required: "You cannot do nothing 😈" })}
         {...rest}
       />
-    </>
+    </div>
   );
 };
