@@ -3,152 +3,182 @@
     {
       "id": 1,
       "title": "Do something nice for someone you care about",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-05-15T08:38:00"
     },
     {
       "id": 2,
       "title": "Memorize a poem",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-12-31T14:23:00"
     },
     {
       "id": 3,
       "title": "Watch a classic movie",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-10-20T18:57:00"
     },
     {
       "id": 4,
       "title": "Watch a documentary",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-02-28T13:12:00"
     },
     {
       "id": 5,
       "title": "Invest in cryptocurrency",
-      "completed": false
+      "completed": false,
+      "dueDate": "2024-11-10T15:45:00"
     },
     {
       "id": 6,
       "title": "Contribute code or a monetary donation to an open-source software project",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-07-01T09:05:00"
     },
     {
       "id": 7,
       "title": "Solve a Rubik's cube",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-09-15T10:32:00"
     },
     {
       "id": 8,
       "title": "Bake pastries for yourself and neighbor",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-11-30T06:18:00"
     },
     {
       "id": 9,
       "title": "Go see a Broadway production",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-03-10T12:50:00"
     },
     {
       "id": 10,
       "title": "Write a thank you letter to an influential person in your life",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-12-15T11:07:00"
     },
     {
       "id": 11,
       "title": "Invite some friends over for a game night",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-06-20T12:39:00"
     },
     {
       "id": 12,
       "title": "Have a football scrimmage with some friends",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-04-05T02:54:00"
     },
     {
       "id": 13,
       "title": "Text a friend you haven't talked to in a long time",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-10-05T17:21:00"
     },
     {
       "id": 14,
       "title": "Organize pantry",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-01-31T14:48:00"
     },
     {
       "id": 15,
       "title": "Buy a new house decoration",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-12-10T16:14:00"
     },
     {
       "id": 16,
       "title": "Plan a vacation you've always wanted to take",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-11-01T05:29:00"
     },
     {
       "id": 17,
       "title": "Clean out car",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-02-15T14:42:00"
     },
     {
       "id": 18,
       "title": "Draw and color a Mandala",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-10-30T22:03:00"
     },
     {
       "id": 19,
       "title": "Create a cookbook with favorite recipes",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-12-05T17:26:00"
     },
     {
       "id": 20,
       "title": "Bake a pie with some friends",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-05-01T10:51:00"
     },
     {
       "id": 21,
       "title": "Create a compost pile",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-03-20T17:16:00"
     },
     {
       "id": 22,
       "title": "Take a hike at a local park",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-09-30T17:43:00"
     },
     {
       "id": 23,
       "title": "Take a class at local community center that interests you",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-11-15T14:09:00"
     },
     {
       "id": 24,
       "title": "Research a topic interested in",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-10-10T18:34:00"
     },
     {
       "id": 25,
       "title": "Plan a trip to another country",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-04-20T18:58:00"
     },
     {
       "id": 26,
       "title": "Improve touch typing",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-01-15T13:25:00"
     },
     {
       "id": 27,
       "title": "Learn Express.js",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-03-05T17:47:00"
     },
     {
       "id": 28,
       "title": "Learn calligraphy",
-      "completed": false
+      "completed": false,
+      "dueDate": "2025-06-10T18:37:00"
     },
     {
       "id": 29,
       "title": "Have a photo session with some friends",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-12-20T00:19:00"
     },
     {
       "id": 30,
       "title": "Go to the gym",
-      "completed": true
+      "completed": true,
+      "dueDate": "2024-11-05T18:36:00"
     }
-  ]
+    ]
 }

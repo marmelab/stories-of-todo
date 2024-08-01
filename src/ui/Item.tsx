@@ -18,6 +18,9 @@ export const Item = ({
     remove(todo.id);
   };
 
+  const date = new Date(todo.dueDate);
+  const dueDate = `${date.toLocaleDateString()} - ${date.toLocaleTimeString()}`;
+
   return (
     <li className="card bg-base-300 rounded-box h-20 flex items-center flex-row justify-between px-10 mb-3">
       <div className="flex items-center flex-row justify-between gap-10">
@@ -27,9 +30,12 @@ export const Item = ({
           checked={todo.completed}
           onChange={handleChange}
         />
-        <span className={clsx("text-lg", todo.completed && "line-through")}>
-          {todo.title}
-        </span>
+        <div
+          className={clsx(todo.completed && "line-through", "flex", "flex-col")}
+        >
+          <span className={"text-xs"}>{dueDate}</span>
+          <span className={"text-lg"}>{todo.title}</span>
+        </div>
       </div>
 
       <button

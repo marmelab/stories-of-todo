@@ -11,6 +11,7 @@ import { List } from "./List";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Toast } from "./Toast";
+import { DateTimeInput } from "./DateTimeInput";
 
 export const Todos = () => {
   const { data, isPending, error } = useTodos();
@@ -56,12 +57,18 @@ export const Todos = () => {
         <form onSubmit={formMethods.handleSubmit(handleCreateTodoSubmit)}>
           <div className="flex join">
             <Input name="title" />
-            <input
+            <DateTimeInput name="dueDate" />
+            <button
               className="btn btn-lg btn-primary join-item"
               type="submit"
               disabled={createTodo.isPending}
-              value={createTodo.isPending ? "Creating..." : "Create"}
-            />
+            >
+              {createTodo.isPending ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Add !"
+              )}
+            </button>
           </div>
         </form>
       </FormProvider>

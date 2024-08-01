@@ -9,7 +9,8 @@ export const getTodosIds = async () => {
 };
 
 export const getTodos = async () => {
-  return (await axiosInstance.get<Todo[]>("todos")).data;
+  return (await axiosInstance.get<Todo[]>(`todos?sort=["dueDate", "asc"]`))
+    .data;
 };
 
 export const getTodo = async (id: number) => {
