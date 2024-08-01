@@ -7,7 +7,6 @@ import { Toast } from "@components/Toast/Toast";
 import { useCreateTodo } from "@services/mutations";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export const Todos = () => {
   const createTodo = useCreateTodo({

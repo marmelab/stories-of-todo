@@ -4,6 +4,7 @@ import { HIGHLIGHT } from "@storybook/addon-highlight";
 import { Todos } from "./Todos";
 import { MswWrapper } from "../msw/MswWrapper";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { userEvent, within } from "@storybook/test";
 
 const meta: Meta<typeof Todos> = {
   title: "Application/Todos",
@@ -32,5 +33,11 @@ type Story = StoryObj<typeof Todos>;
 const queryClient = new QueryClient();
 
 export const Application: Story = {
-  args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = await canvas.findByPlaceholderText("What do you want to do?");
+    userEvent.type(input, "Learn React");
+    const button = canvas.getByRole("button", { name: /add/i });
+    userEvent.click(button, { delay: 700 });
+  },
 };

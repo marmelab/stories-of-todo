@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/test";
 import { Id, toast } from "react-toastify";
 import { Toast } from "./Toast";
 
@@ -25,7 +26,11 @@ export const Default: Story = {
     const notify = () => toast("Default !");
     return <Notify notify={notify} />;
   },
-  args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button");
+    userEvent.click(button);
+  },
 };
 
 export const Success: Story = {
@@ -33,7 +38,11 @@ export const Success: Story = {
     const notify = () => toast.success("Success !");
     return <Notify notify={notify} />;
   },
-  args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button");
+    userEvent.click(button);
+  },
 };
 
 export const Error: Story = {
@@ -41,5 +50,9 @@ export const Error: Story = {
     const notify = () => toast.error("Error !");
     return <Notify notify={notify} />;
   },
-  args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button");
+    userEvent.click(button);
+  },
 };
