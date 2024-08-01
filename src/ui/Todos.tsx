@@ -3,11 +3,11 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useCreateTodo } from "../services/mutations";
 import { Todo } from "../types/todo";
-import { DateTimeInput } from "./DateTimeInput";
-import { Input } from "./Input";
-import { List } from "./List";
-import { SelectInput } from "./SelectInput";
-import { Toast } from "./Toast";
+import { Input } from "./Input/Input";
+import { List } from "./List/List";
+import { Toast } from "./Toast/Toast";
+import { DateTimeInput } from "./DateTimeInput/DateTimeInput";
+import { SelectInput } from "./SelectInput/SelectInput";
 
 export const Todos = () => {
   const createTodo = useCreateTodo({

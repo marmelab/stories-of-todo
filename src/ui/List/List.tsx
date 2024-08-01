@@ -1,8 +1,8 @@
 import { SubmitHandler } from "react-hook-form";
-import { Todo } from "../types/todo";
-import { Item } from "./Item";
-import { useTodos } from "../services/queries";
-import { useDeleteTodo, useUpdateTodo } from "../services/mutations";
+import { Todo } from "../../types/todo";
+import { Item } from "../Item/Item";
+import { useTodos } from "../../services/queries";
+import { useDeleteTodo, useUpdateTodo } from "../../services/mutations";
 
 export const List = () => {
   const { data, isPending, error } = useTodos();
@@ -16,7 +16,7 @@ export const List = () => {
     deteleTodo.mutate(id);
   };
   if (isPending) {
-    return <div>Loading...</div>;
+    return <span className="loading loading-spinner text-primary"></span>;
   }
   if (error) {
     return <div>Error: {error.message}</div>;

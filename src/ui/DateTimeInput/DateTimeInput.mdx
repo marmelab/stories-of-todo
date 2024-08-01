@@ -1,0 +1,29 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as DateTimeInput from './DateTimeInput.stories';
+
+<Meta title="DateTimeInput" of={DateTimeInput}/>
+
+# DateInput
+
+The `<DateTimeInput>` component is a simple date input. It uses default html datepicker.
+
+## Usage
+
+The `DateTimeInput` is desinged to be used inside a `<FormProvider>` of `react-hook-form`.
+
+```jsx
+import { DateTimeInput } from "./DateTimeInput";
+
+export const MyForm = () => {
+  const formMethods = useForm();
+
+  return <FormProvider {...formMethods}>
+    <form>
+      <DateTimeInput />
+    </form>
+  </FormProvider>
+};
+```
+
+<Canvas of={DateTimeInput.Default} />

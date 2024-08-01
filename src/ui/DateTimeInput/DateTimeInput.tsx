@@ -1,5 +1,5 @@
 import { FieldValues, useFormContext } from "react-hook-form";
-import { InputProps } from "../types/input";
+import { InputProps } from "../../types/input";
 
 export const DateTimeInput = <T extends FieldValues>(props: InputProps<T>) => {
   const { register } = useFormContext();

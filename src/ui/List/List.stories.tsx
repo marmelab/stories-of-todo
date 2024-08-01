@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { MswWrapper } from "../msw/MswWrapper";
+import { MswWrapper } from "../../msw/MswWrapper";
 import { List } from "./List";
 
 const queryClient = new QueryClient();
