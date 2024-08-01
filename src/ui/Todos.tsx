@@ -8,13 +8,19 @@ import { useTodos } from "../services/queries";
 import { Todo } from "../types/todo";
 import { Input } from "./Input";
 import { List } from "./List";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Toast } from "./Toast";
 
 export const Todos = () => {
   const { data, isPending, error } = useTodos();
 
   const createTodo = useCreateTodo({
-    onSuccess: () => {
-      console.log("Todo created successfully");
+    onSuccess: (data: Todo) => {
+      toast.success(`Todo "${data.title}" created!`);
+    },
+    onError: (error) => {
+      toast.error(`Failed to create todo: ${error.message}`);
     },
   });
 
@@ -65,6 +71,7 @@ export const Todos = () => {
         toggleComplete={toggleComplete}
         handleDeleteTodo={handleDeleteTodo}
       />
+      <Toast />
     </>
   );
 };
