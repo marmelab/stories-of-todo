@@ -4,7 +4,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { Todo } from "../types/todo";
 
 const meta: Meta<typeof Input> = {
-  title: "Input",
+  title: "Design System/Atoms/Input",
   component: Input,
   decorators: [
     (Story) => {

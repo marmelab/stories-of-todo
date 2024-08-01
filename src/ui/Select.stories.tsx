@@ -4,7 +4,7 @@ import { Todo } from "../types/todo";
 import { SelectInput } from "./SelectInput";
 
 const meta: Meta<typeof SelectInput> = {
-  title: "Select",
+  title: "Design System/Atoms/Select",
   component: SelectInput,
   decorators: [
     (Story) => {

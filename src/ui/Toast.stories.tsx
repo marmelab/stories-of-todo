@@ -3,7 +3,7 @@ import { Toast } from "./Toast";
 import { Id, toast } from "react-toastify";
 
 const meta: Meta<typeof Toast> = {
-  title: "Toast",
+  title: "Design System/Atoms/Toast",
   component: Toast,
 };
 

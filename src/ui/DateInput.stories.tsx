@@ -5,7 +5,7 @@ import { Todo } from "../types/todo";
 import { DateTimeInput } from "./DateTimeInput";
 
 const meta: Meta<typeof DateTimeInput> = {
-  title: "DateInput",
+  title: "Design System/Atoms/DateInput",
   component: DateTimeInput,
   decorators: [
     (Story) => {

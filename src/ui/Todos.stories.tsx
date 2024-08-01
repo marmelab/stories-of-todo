@@ -5,7 +5,7 @@ import { MswWrapper } from "../msw/MswWrapper";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const meta: Meta<typeof Todos> = {
-  title: "Todos",
+  title: "Application/Todos",
   component: Todos,
   decorators: [
     (Story) => (

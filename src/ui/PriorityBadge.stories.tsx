@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { PriorityBadge } from "./PriorityBadge";
 
 const meta: Meta<typeof PriorityBadge> = {
-  title: "PriorityBadge",
+  title: "Design System/Atoms/PriorityBadge",
   component: PriorityBadge,
 };
 

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Item } from "./Item";
 
 const meta: Meta<typeof Item> = {
-  title: "Item",
+  title: "Application/Item",
   component: Item,
 };
 
@@ -10,7 +10,7 @@ export default meta;
 
 type Story = StoryObj<typeof Item>;
 
-export const Default: Story = {
+export const Pending: Story = {
   args: {
     remove: () => {},
     todo: {
