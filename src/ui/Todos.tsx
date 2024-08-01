@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Toast } from "./Toast";
 import { DateTimeInput } from "./DateTimeInput";
+import { SelectInput } from "./SelectInput";
 
 export const Todos = () => {
   const { data, isPending, error } = useTodos();
@@ -58,6 +59,7 @@ export const Todos = () => {
           <div className="flex join">
             <Input name="title" />
             <DateTimeInput name="dueDate" />
+            <SelectInput name="priority" options={["low", "medium", "high"]} />
             <button
               className="btn btn-lg btn-primary join-item"
               type="submit"

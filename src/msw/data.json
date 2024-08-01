@@ -4,181 +4,211 @@
       "id": 1,
       "title": "Do something nice for someone you care about",
       "completed": false,
-      "dueDate": "2025-05-15T08:38:00"
+      "dueDate": "2025-05-15T08:38:00",
+      "priority": "high"
     },
     {
       "id": 2,
       "title": "Memorize a poem",
       "completed": true,
-      "dueDate": "2024-12-31T14:23:00"
+      "dueDate": "2024-12-31T14:23:00",
+      "priority": "medium"
     },
     {
       "id": 3,
       "title": "Watch a classic movie",
       "completed": true,
-      "dueDate": "2024-10-20T18:57:00"
+      "dueDate": "2024-10-20T18:57:00",
+      "priority": "low"
     },
     {
       "id": 4,
       "title": "Watch a documentary",
       "completed": false,
-      "dueDate": "2025-02-28T13:12:00"
+      "dueDate": "2025-02-28T13:12:00",
+      "priority": "high"
     },
     {
       "id": 5,
       "title": "Invest in cryptocurrency",
       "completed": false,
-      "dueDate": "2024-11-10T15:45:00"
+      "dueDate": "2024-11-10T15:45:00",
+      "priority": "medium"
     },
     {
       "id": 6,
       "title": "Contribute code or a monetary donation to an open-source software project",
       "completed": false,
-      "dueDate": "2025-07-01T09:05:00"
+      "dueDate": "2025-07-01T09:05:00",
+      "priority": "low"
     },
     {
       "id": 7,
       "title": "Solve a Rubik's cube",
       "completed": true,
-      "dueDate": "2024-09-15T10:32:00"
+      "dueDate": "2024-09-15T10:32:00",
+      "priority": "high"
     },
     {
       "id": 8,
       "title": "Bake pastries for yourself and neighbor",
       "completed": true,
-      "dueDate": "2024-11-30T06:18:00"
+      "dueDate": "2024-11-30T06:18:00",
+      "priority": "medium"
     },
     {
       "id": 9,
       "title": "Go see a Broadway production",
       "completed": false,
-      "dueDate": "2025-03-10T12:50:00"
+      "dueDate": "2025-03-10T12:50:00",
+      "priority": "low"
     },
     {
       "id": 10,
       "title": "Write a thank you letter to an influential person in your life",
       "completed": true,
-      "dueDate": "2024-12-15T11:07:00"
+      "dueDate": "2024-12-15T11:07:00",
+      "priority": "high"
     },
     {
       "id": 11,
       "title": "Invite some friends over for a game night",
       "completed": false,
-      "dueDate": "2025-06-20T12:39:00"
+      "dueDate": "2025-06-20T12:39:00",
+      "priority": "medium"
     },
     {
       "id": 12,
       "title": "Have a football scrimmage with some friends",
       "completed": false,
-      "dueDate": "2025-04-05T02:54:00"
+      "dueDate": "2025-04-05T02:54:00",
+      "priority": "low"
     },
     {
       "id": 13,
       "title": "Text a friend you haven't talked to in a long time",
       "completed": true,
-      "dueDate": "2024-10-05T17:21:00"
+      "dueDate": "2024-10-05T17:21:00",
+      "priority": "high"
     },
     {
       "id": 14,
       "title": "Organize pantry",
       "completed": false,
-      "dueDate": "2025-01-31T14:48:00"
+      "dueDate": "2025-01-31T14:48:00",
+      "priority": "medium"
     },
     {
       "id": 15,
       "title": "Buy a new house decoration",
       "completed": true,
-      "dueDate": "2024-12-10T16:14:00"
+      "dueDate": "2024-12-10T16:14:00",
+      "priority": "low"
     },
     {
       "id": 16,
       "title": "Plan a vacation you've always wanted to take",
       "completed": true,
-      "dueDate": "2024-11-01T05:29:00"
+      "dueDate": "2024-11-01T05:29:00",
+      "priority": "high"
     },
     {
       "id": 17,
       "title": "Clean out car",
       "completed": false,
-      "dueDate": "2025-02-15T14:42:00"
+      "dueDate": "2025-02-15T14:42:00",
+      "priority": "medium"
     },
     {
       "id": 18,
       "title": "Draw and color a Mandala",
       "completed": true,
-      "dueDate": "2024-10-30T22:03:00"
+      "dueDate": "2024-10-30T22:03:00",
+      "priority": "low"
     },
     {
       "id": 19,
       "title": "Create a cookbook with favorite recipes",
       "completed": true,
-      "dueDate": "2024-12-05T17:26:00"
+      "dueDate": "2024-12-05T17:26:00",
+      "priority": "high"
     },
     {
       "id": 20,
       "title": "Bake a pie with some friends",
       "completed": false,
-      "dueDate": "2025-05-01T10:51:00"
+      "dueDate": "2025-05-01T10:51:00",
+      "priority": "medium"
     },
     {
       "id": 21,
       "title": "Create a compost pile",
       "completed": false,
-      "dueDate": "2025-03-20T17:16:00"
+      "dueDate": "2025-03-20T17:16:00",
+      "priority": "low"
     },
     {
       "id": 22,
       "title": "Take a hike at a local park",
       "completed": true,
-      "dueDate": "2024-09-30T17:43:00"
+      "dueDate": "2024-09-30T17:43:00",
+      "priority": "high"
     },
     {
       "id": 23,
       "title": "Take a class at local community center that interests you",
       "completed": true,
-      "dueDate": "2024-11-15T14:09:00"
+      "dueDate": "2024-11-15T14:09:00",
+      "priority": "medium"
     },
     {
       "id": 24,
       "title": "Research a topic interested in",
       "completed": true,
-      "dueDate": "2024-10-10T18:34:00"
+      "dueDate": "2024-10-10T18:34:00",
+      "priority": "low"
     },
     {
       "id": 25,
       "title": "Plan a trip to another country",
       "completed": false,
-      "dueDate": "2025-04-20T18:58:00"
+      "dueDate": "2025-04-20T18:58:00",
+      "priority": "high"
     },
     {
       "id": 26,
       "title": "Improve touch typing",
       "completed": false,
-      "dueDate": "2025-01-15T13:25:00"
+      "dueDate": "2025-01-15T13:25:00",
+      "priority": "medium"
     },
     {
       "id": 27,
       "title": "Learn Express.js",
       "completed": false,
-      "dueDate": "2025-03-05T17:47:00"
+      "dueDate": "2025-03-05T17:47:00",
+      "priority": "low"
     },
     {
       "id": 28,
       "title": "Learn calligraphy",
       "completed": false,
-      "dueDate": "2025-06-10T18:37:00"
+      "dueDate": "2025-06-10T18:37:00",
+      "priority": "high"
     },
     {
       "id": 29,
       "title": "Have a photo session with some friends",
       "completed": true,
-      "dueDate": "2024-12-20T00:19:00"
+      "dueDate": "2024-12-20T00:19:00",
+      "priority": "medium"
     },
     {
       "id": 30,
       "title": "Go to the gym",
       "completed": true,
-      "dueDate": "2024-11-05T18:36:00"
+      "dueDate": "2024-11-05T18:36:00",
+      "priority": "low"
     }
-    ]
+  ]
 }
