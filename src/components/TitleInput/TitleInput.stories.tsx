@@ -6,6 +6,13 @@ import { TitleInput } from "./TitleInput";
 const meta: Meta<typeof TitleInput> = {
   title: "Design System/Atoms/TitleInput",
   component: TitleInput,
+};
+
+export default meta;
+
+type Story = StoryObj<typeof TitleInput>;
+
+export const Default: Story = {
   decorators: [
     (Story) => {
       const formMethods = useForm<Todo>();
@@ -16,12 +23,23 @@ const meta: Meta<typeof TitleInput> = {
       );
     },
   ],
+  args: {},
 };
 
-export default meta;
-
-type Story = StoryObj<typeof TitleInput>;
-
-export const Default: Story = {
+export const Required: Story = {
+  decorators: [
+    (Story) => {
+      const { formState, ...rest } = useForm<Todo>();
+      formState.errors.title = {
+        message: "You cannot do nothing 😈",
+        type: "required",
+      };
+      return (
+        <FormProvider formState={formState} {...rest}>
+          <Story />
+        </FormProvider>
+      );
+    },
+  ],
   args: {},
 };
