@@ -7,6 +7,7 @@ import { Toast } from "@components/Toast/Toast";
 import { useCreateTodo } from "@services/mutations";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { SubmitButton } from "@components/SubmitButton/SubmitButton";
 
 export const Todos = () => {
   const createTodo = useCreateTodo({
@@ -32,17 +33,7 @@ export const Todos = () => {
           <div className="flex join mt-1">
             <DueDateTimeInput />
             <PrioritySelectInput />
-            <button
-              className="btn btn-lg btn-primary join-item"
-              type="submit"
-              disabled={createTodo.isPending}
-            >
-              {createTodo.isPending ? (
-                <span className="loading loading-spinner"></span>
-              ) : (
-                "Add !"
-              )}
-            </button>
+            <SubmitButton isPending={createTodo.isPending} label="Add!" />
           </div>
         </form>
       </FormProvider>
