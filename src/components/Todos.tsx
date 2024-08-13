@@ -1,8 +1,8 @@
 import { Todo } from "@/types/todo";
-import { DateTimeInput } from "@components/DateTimeInput/DateTimeInput";
-import { Input } from "@components/Input/Input";
+import { DueDateTimeInput } from "@components/DueDateTimeInput/DueDateTimeInput";
+import { TitleInput } from "@components/TitleInput/TitleInput";
 import { List } from "@components/List/List";
-import { SelectInput } from "@components/SelectInput/SelectInput";
+import { PrioritySelectInput } from "@components/PrioritySelectInput/PrioritySelectInput";
 import { Toast } from "@components/Toast/Toast";
 import { useCreateTodo } from "@services/mutations";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
@@ -28,10 +28,10 @@ export const Todos = () => {
     <>
       <FormProvider {...formMethods}>
         <form onSubmit={formMethods.handleSubmit(handleCreateTodoSubmit)}>
-          <Input name="title" />
+          <TitleInput />
           <div className="flex join mt-1">
-            <DateTimeInput name="dueDate" />
-            <SelectInput name="priority" options={["low", "medium", "high"]} />
+            <DueDateTimeInput />
+            <PrioritySelectInput />
             <button
               className="btn btn-lg btn-primary join-item"
               type="submit"

@@ -1,14 +1,17 @@
-import { SelectProps } from "@/types/input";
-import { FieldValues, useFormContext } from "react-hook-form";
+import { HTMLAttributes } from "react";
+import { useFormContext } from "react-hook-form";
 
-export const SelectInput = <T extends FieldValues>(props: SelectProps<T>) => {
+const options = ["low", "medium", "high"];
+
+export const PrioritySelectInput = (
+  props: HTMLAttributes<HTMLSelectElement>
+) => {
   const { register } = useFormContext();
-  const { name, options, ...rest } = props;
   return (
     <select
       className="select select-bordered select-lg join-item"
-      {...register(name)}
-      {...rest}
+      {...register("priority")}
+      {...props}
     >
       {options.map((value) => (
         <option key={value} value={value}>

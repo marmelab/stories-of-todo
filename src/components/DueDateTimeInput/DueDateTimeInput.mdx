@@ -1,0 +1,29 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as DueDateTimeInput from './DueDateTimeInput.stories';
+
+<Meta title="DueDateTimeInput" of={DueDateTimeInput}/>
+
+# DueDateTimeInput
+
+The `<DueDateTimeInput>` component is a simple date input. It uses default html datepicker.
+
+## Usage
+
+The `DueDateTimeInput` is desinged to be used inside a `<FormProvider>` of `react-hook-form`.
+
+```jsx
+import { DueDateTimeInput } from "./DueDateTimeInput";
+
+export const MyForm = () => {
+  const formMethods = useForm();
+
+  return <FormProvider {...formMethods}>
+    <form>
+      <DueDateTimeInput />
+    </form>
+  </FormProvider>
+};
+```
+
+<Canvas of={DueDateTimeInput.Default} />

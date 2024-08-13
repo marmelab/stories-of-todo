@@ -1,0 +1,29 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as TitleInput from './TitleInput.stories';
+
+<Meta title="TitleInput" of={TitleInput}/>
+
+# TitleInput
+
+The `<TitleInput>` component is a simple input. It uses default html datepicker.
+
+## Usage
+
+The `TitleInput` is desinged to be used inside a `<FormProvider>` of `react-hook-form`.
+
+```jsx
+import { TitleInput } from "./TitleInput";
+
+export const MyForm = () => {
+  const formMethods = useForm();
+
+  return <FormProvider {...formMethods}>
+    <form>
+      <DateTimeInput />
+    </form>
+  </FormProvider>
+};
+```
+
+<Canvas of={TitleInput.Default} />
