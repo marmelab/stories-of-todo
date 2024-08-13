@@ -1,7 +1,7 @@
-import { InputProps } from "@/types/input";
+import { HTMLAttributes } from "react";
 import { useFormContext } from "react-hook-form";
 
-export const DueDateTimeInput = (props: InputProps) => {
+export const DueDateTimeInput = (props: HTMLAttributes<HTMLInputElement>) => {
   const { register } = useFormContext();
   return (
     <input
