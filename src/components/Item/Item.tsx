@@ -30,6 +30,7 @@ export const Item = ({
           className="checkbox checkbox-success"
           checked={todo.completed}
           onChange={handleChange}
+          aria-label="toggle"
         />
         <div
           className={clsx(todo.completed && "line-through", "flex", "flex-col")}
@@ -43,6 +44,7 @@ export const Item = ({
         <button
           className="ml-5 btn btn-xs btn-square btn-error"
           onClick={handleDelete}
+          aria-label="delete"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

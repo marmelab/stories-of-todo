@@ -9,6 +9,13 @@ import { expect, fireEvent, userEvent, within } from "@storybook/test";
 const meta: Meta<typeof Todos> = {
   title: "Application/Todos",
   component: Todos,
+  async beforeEach() {
+    return async () => {
+      queryClient.invalidateQueries({
+        queryKey: ["todos"],
+      });
+    };
+  },
   decorators: [
     (Story) => {
       const emit = useChannel({});
