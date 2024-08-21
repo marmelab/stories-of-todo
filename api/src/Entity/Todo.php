@@ -26,13 +26,18 @@ class Todo
     private ?string $title = null;
 
     #[ORM\Column]
-    private ?bool $completed = null;
+    private ?bool $completed = false;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $dueDate = null;
 
     #[ORM\Column(length: 255, enumType: Priority::class)]
     private ?Priority $priority = null;
+
+    public function __construct()
+    {
+        $this->dueDate = new \DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {

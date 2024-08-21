@@ -18,7 +18,12 @@ export const getTodo = async (id: number) => {
 };
 
 export const createTodo = async (data: Todo) => {
-  return (await axiosInstance.post<Todo>("todos", data)).data;
+  return (
+    await axiosInstance.post<Todo>("todos", {
+      ...data,
+      dueDate: new Date(data.dueDate).toISOString(),
+    })
+  ).data;
 };
 
 export const updateTodo = async (data: Todo) => {
