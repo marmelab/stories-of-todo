@@ -6,10 +6,10 @@ import data from "./data.json";
 
 export const initMsw = async () => {
   const handler = getMswHandler({
-    baseUrl: "http://localhost:3000",
+    baseUrl: "https://localhost",
     data,
   });
-  const worker = setupWorker(http.all(/http:\/\/localhost:3000/, handler));
+  const worker = setupWorker(http.all(/https:\/\/localhost/, handler));
   return worker.start({
     quiet: true, // Instruct MSW to not log requests in the console
     onUnhandledRequest: "bypass", // Instruct MSW to ignore requests we don't handle

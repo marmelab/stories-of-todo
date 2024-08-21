@@ -5,9 +5,9 @@ api_platform:
     mercure:
         include_type: true
     formats:
-        jsonld: ['application/ld+json']
+        json: ['application/json']
     docs_formats:
-        jsonld: ['application/ld+json']
+        json: ['application/json']
         jsonopenapi: ['application/vnd.openapi+json']
         html: ['text/html']
     # Good defaults for REST APIs

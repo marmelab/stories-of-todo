@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Todo } from "../types/todo";
 
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://localhost";
 const axiosInstance = axios.create({ baseURL: BASE_URL });
 
 export const getTodosIds = async () => {
