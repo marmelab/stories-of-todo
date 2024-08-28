@@ -71,3 +71,17 @@ To stop the application, press `Ctrl+C` in the terminal and run the following co
 make stop-api
 ```
 
+#### Testing
+
+Tests are written in Storybook [Play functions](https://storybook.js.org/docs/writing-stories/play-function). Storybook [test runner](https://storybook.js.org/docs/writing-tests/test-runner) turns all of your stories into executable tests. It is powered by [Jest](https://jestjs.io/) and [Playwright](https://playwright.dev/).
+
+Before running tests, make sure to install playwright with the following command:
+```bash
+npx playwright install --with-deps
+```
+
+To run the [interactions-tests](https://storybook.js.org/docs/writing-tests/interaction-testing), run the following command:
+```bash
+make storybook # if not already running
+make interaction-test
+```

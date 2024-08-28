@@ -9,7 +9,9 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook:build": "storybook build",
+    "storybook:serve": "serve storybook-static",
+    "storybook:test": "test-storybook"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.51.5",
@@ -32,6 +34,7 @@
     "@storybook/react": "^8.2.4",
     "@storybook/react-vite": "^8.2.4",
     "@storybook/test": "^8.2.7",
+    "@storybook/test-runner": "^0.19.1",
     "@storybook/theming": "^8.2.7",
     "@tanstack/eslint-plugin-query": "^5.51.1",
     "@types/react": "^18.3.3",

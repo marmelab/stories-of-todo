@@ -29,3 +29,7 @@ start:
 	npm run build
 	npm run preview
 	@echo "Done!"
+
+interaction-test:
+	@echo "Running interaction test..."
+	npm run storybook:test -- --watch -u
