@@ -1,30 +1,73 @@
-# React + TypeScript + Vite
+# Stories of Todo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Using a Todo List application, this project demonstrates how to use [Storybook](https://storybook.js.org/) to develop components in isolation, document them, and test them.
 
-Currently, two official plugins are available:
+Made with:
+ - [Vite](https://vitejs.dev/),
+ - [React](https://react.dev/),
+ - [TypeScript](https://www.typescriptlang.org/), 
+ - [Storybook](https://storybook.js.org/), 
+ - [daisyUI](https://daisyui.com/),
+ - [Api Platform](https://api-platform.com/) (backend API),
+ - [FakeRest](https://github.com/marmelab/FakeRest) (mock API),
+ - [TanStack Query](https://tanstack.com/query/latest),
+ - [React Hook Form](https://react-hook-form.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [make](https://www.gnu.org/software/make/)
+- [Node.js](https://nodejs.org/en/) (20.x or newer)
+- [npm](https://www.npmjs.com/)
+- [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/)
 
-- Configure the top-level `parserOptions` property like this:
+### Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Run the following command to install the project dependencies:
+
+```bash
+make install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Development
+
+#### Frontend
+
+##### Isolated components
+
+The frontend components are built in isolation thanks to Storybook. It mokes the API with [FakeRest](https://github.com/marmelab/FakeRest#msw) in conjuction with [MSW](https://mswjs.io/). It means that you will be able to see fetch requests in your browser dev tools 🤩.
+
+This method is the recommended way to develop components, document them, and test them.
+
+To develop the frontend with Storybook, run the following command:
+
+```bash
+make storybook
+```
+
+Navigate to the url displayed in the terminal to see the Storybook interface.
+
+##### Full Application
+
+The final point of this application is to request a real API. To achieve this, an Api Platform server is provided.
+It is useful to test the fronted application works great with a real API.
+
+To run the API and the application, run the following command:
+
+```bash
+make dev
+```
+
+> Before accessing the application, navigate to the https://localhost and make sure to accept the self-signed certificate. Otherwise, the application will not be able to fetch the API.
+
+You can also access the API documentation at https://localhost/docs
+
+Then, navigate to the url displayed in the terminal to see the application running.
+
+To stop the application, press `Ctrl+C` in the terminal and run the following command:
+
+```bash
+make stop-api
+```
+
