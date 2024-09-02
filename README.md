@@ -1,3 +1,5 @@
+<a href="https://github.com/storybooks/storybook" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
+
 # Stories of Todo
 
 Using a Todo List application, this project demonstrates how to use [Storybook](https://storybook.js.org/) to develop components in isolation, document them, and test them.
