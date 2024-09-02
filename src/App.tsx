@@ -1,20 +1,24 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Todos } from "./components/Todos";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools/production";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { TodosApp } from "./pages/TodoApp";
+import { Home } from "./pages/Home";
 import "./App.css";
+import { Slideshow } from "./pages/Slideshow";
 
-const queryClient = new QueryClient();
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/todos",
+    element: <TodosApp />,
+  },
+  {
+    path: "/slideshow",
+    element: <Slideshow />,
+  },
+]);
 
-function App() {
-  return (
-    <div className="container mx-auto">
-      <h1 className="text-3xl font-bold text-center mt-8 mb-8">My Todos</h1>
-      <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <Todos />
-      </QueryClientProvider>
-    </div>
-  );
-}
+const App = () => <RouterProvider router={router} />;
 
 export default App;
