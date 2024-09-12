@@ -9,6 +9,7 @@ import {
   Why,
   What,
   Yata,
+  HowTo,
 } from "@/slides";
 import { Deck, DeckProps, DefaultTemplate } from "spectacle";
 
@@ -32,6 +33,7 @@ export const Slideshow = () => (
     <HackDay />
     <What />
     <Yata />
+    <HowTo />
     <Conclusion />
   </Deck>
 );
