@@ -1,11 +1,8 @@
-import { Appear, Box, FlexBox, Image, Notes, Slide, Text } from "spectacle";
+import { Box, CodePane, FlexBox, Image, Notes, Slide, Text } from "spectacle";
 import errorBlocked from "@/assets/error-blocked.jpg";
 import reactAdminContribs from "@/assets/react-admin-contribs.png";
 import apiPlatformAdminContribs from "@/assets/api-platform-admin-contribs.png";
 import uxThinking from "@/assets/ux-thinking.jpg";
-import testCi from "@/assets/test-ci.png";
-import basicStory from "@/assets/basic-story.png";
-import dockerCompose from "@/assets/docker-compose.png";
 import pr541 from "@/assets/pr-541.png";
 
 export const HackDay = () => (
@@ -96,23 +93,125 @@ export const HackDay = () => (
       </Notes>
     </Slide>
     <Slide>
-      <FlexBox>
-        <Appear>
-          <Image src={dockerCompose} />
-        </Appear>
-        <Appear>
-          <Image src={basicStory} />
-        </Appear>
-        <Appear>
-          <Image src={testCi} />
-        </Appear>
-      </FlexBox>
+      <CodePane language="yaml">
+        {`
+          pwa:
+              image: \${IMAGES_PREFIX:-}storybook-pwa
+              build:
+                context: .
+                target: dev
+              environment:
+                ENTRYPOINT: \${ENTRYPOINT:-https://localhost}
+              volumes:
+                - .:/srv/app
+                - pwa_node_modules:/srv/app/node_modules
+              healthcheck:
+                test: ["CMD", "curl", "-f", "http://127.0.0.1:3000"]
+                interval: 10s
+                timeout: 10s
+                retries: 20
+                start_period: 20s
+              ports:
+                - target: 3000
+                  published: \${PWA_PORT:-3000}
+        `}
+      </CodePane>
+      <Notes>À coup de Docker</Notes>
+    </Slide>
+    <Slide>
+      <CodePane language="typescript">
+        {`
+          import type { Meta, StoryObj } from '@storybook/react';
+          import { within } from '@storybook/test';
+          import Basic from './Basic';
+
+          const meta = {
+            title: 'Admin/Basic',
+            component: Basic,
+            tags: ['autodocs'],
+            parameters: {
+              layout: 'fullscreen',
+            },
+          } satisfies Meta<typeof Basic>;
+
+          export default meta;
+
+          type Story = StoryObj<typeof meta>;
+
+          export const Admin: Story = {
+            play: async ({ canvasElement }) => {
+              const canvas = within(canvasElement);
+              await canvas.findByText('Greetings');
+            },
+            args: {
+              entrypoint: process.env.ENTRYPOINT,
+            },
+          };
+        `}
+      </CodePane>
+      <Notes>de Storybook</Notes>
+    </Slide>
+    <Slide>
+      <CodePane language="yaml">
+        {`
+              name: Storybook
+
+              on:
+                push:
+                  branches:
+                    - main
+                pull_request: ~
+                workflow_dispatch: ~
+
+              concurrency:
+                group: \${{ github.workflow }}-\${{ github.head_ref || github.run_id }}
+                cancel-in-progress: true
+
+              jobs:
+                tests:
+                  name: Tests
+                  runs-on: ubuntu-latest
+                  steps:
+                    -
+                      name: Checkout
+                      uses: actions/checkout@v4
+                    -
+                      name: Set up Docker Buildx
+                      uses: docker/setup-buildx-action@v3
+                    -
+                        name: Build Docker images
+                        uses: docker/bake-action@v4
+                        with:
+                            pull: true
+                            load: true
+                            files: |
+                              compose.yaml
+                              compose.ci.yaml
+                            set: |
+                              *.cache-from=type=gha,scope=\${{github.ref}}
+                              *.cache-from=type=gha,scope=refs/heads/main
+                              *.cache-to=type=gha,scope=\${{github.ref}},mode=max
+                    -
+                      name: Start services
+                      run: docker compose -f compose.yaml -f compose.ci.yaml up --wait --no-build
+                    -
+                      name: Create test database
+                      run: docker compose exec -T php bin/console -e test doctrine:database:create
+                    -
+                      name: Run migrations
+                      run: docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
+                    -
+                      name: Run interactions tests
+                      run: docker compose exec -T pwa yarn storybook:test --url http://127.0.0.1:3000 --maxWorkers 1
+        `}
+      </CodePane>
       <Notes>
-        À coup de Docker, de Storybook et de CI, nous avons réussi à mettre en
-        place environnements de dev solide et facilement maintenable pour des
-        développeurs React (et React-admin)
+        et de CI, nous avons réussi à mettre en place environnements de dev
+        solide et facilement maintenable pour des développeurs React (et
+        React-admin)
       </Notes>
     </Slide>
+
     <Slide backgroundImage={`url(${pr541})`} backgroundSize="contain">
       <Notes>
         Je ne vais pas vous expliquer en détail comment nous avons développé cet
