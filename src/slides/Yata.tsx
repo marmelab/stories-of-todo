@@ -51,10 +51,10 @@ export const Yata = () => (
       animateListItems={true}
       listType="unordered"
       items={[
-        "voir la liste des tâches à réaliser",
-        "ajouter une tâche",
-        "marquer une tâche comme réalisée",
-        "supprimer une tâche",
+        "Voir la liste des tâches à réaliser",
+        "Ajouter une tâche",
+        "Marquer une tâche comme réalisée",
+        "Supprimer une tâche",
       ]}
     />
     <SlideLayout.Section>
