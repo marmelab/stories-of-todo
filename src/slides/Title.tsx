@@ -8,8 +8,10 @@ export const Title = () => (
     <div className="divider" />
     <Text fontSize={16}>Adrien Guernier - Marmelab</Text>
     <Notes>
-      Dans cette conférence, nNous allons voir comment isoler nos composants
-      frontend et ainsi leur rendre leur libérté.
+      Dans cette conférence, nous allons voir développer une application
+      frontend, en isolant les composants. Quelle problèmatique cela résoud,
+      comment cela va nous aider à développer une application plus robuste et
+      comment Storybook peut nous y aider.
     </Notes>
   </SlideLayout.Center>
 );
