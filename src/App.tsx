@@ -3,6 +3,7 @@ import { TodosApp } from "./pages/TodoApp";
 import { Home } from "./pages/Home";
 import "./App.css";
 import { Slideshow } from "./pages/Slideshow";
+import { Admin } from "./pages/Admin";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/slideshow",
     element: <Slideshow />,
+  },
+  {
+    path: "/admin/*",
+    element: <Admin />,
   },
 ]);
 

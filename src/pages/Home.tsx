@@ -12,6 +12,9 @@ export const Home = () => (
       <NavLink className="btn btn-outline btn-lg btn-info" to="slideshow">
         Slideshow
       </NavLink>
+      <NavLink className="btn btn-outline btn-lg btn-warning" to="admin">
+        Admin
+      </NavLink>
     </div>
   </div>
 );

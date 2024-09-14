@@ -15,6 +15,7 @@
     "storybook:serve:test": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run storybook:serve\" \"npm run storybook:test\""
   },
   "dependencies": {
+    "@api-platform/admin": "^4.0.1",
     "@tanstack/react-query": "^5.51.5",
     "@tanstack/react-query-devtools": "^5.51.5",
     "axios": "^1.7.2",
