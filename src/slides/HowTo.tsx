@@ -1,5 +1,7 @@
 import {
   Appear,
+  CodePane,
+  FlexBox,
   Heading,
   Image,
   ListItem,
@@ -16,6 +18,58 @@ import incrementalStep4 from "@/assets/incremental-step-4.png";
 import incrementalStep5 from "@/assets/incremental-step-5.png";
 import incrementalStep6 from "@/assets/incremental-step-6.png";
 import incrementalStep7 from "@/assets/incremental-step-7.png";
+import isolation from "@/assets/isolation.jpg";
+import isolatedButton from "@/assets/isolated-button.png";
+import isolatedTitleInput from "@/assets/isolated-title-input.png";
+import isolatedList from "@/assets/isolated-list.png";
+import isolatedItem from "@/assets/isolated-item.png";
+import isolatedPriorityBadge from "@/assets/isolated-priority-badge.png";
+import isolatedDueDateInput from "@/assets/isolated-due-date-input.png";
+import interactionsTest from "@/assets/interactions-test.png";
+import { FormProvider, useForm } from "react-hook-form";
+import { TitleInput } from "@/components/TitleInput/TitleInput";
+import { Item } from "@/components/Item/Item";
+import { useState } from "react";
+import { Todo } from "@/types/todo";
+
+const handleSubmit = () => {};
+
+const ExampleTitleInput = () => {
+  const { formState, ...rest } = useForm<Todo>();
+
+  return (
+    <FormProvider formState={formState} {...rest}>
+      <form
+        onSubmit={rest.handleSubmit(handleSubmit)}
+        className="flex join mt-1"
+      >
+        <TitleInput />
+      </form>
+    </FormProvider>
+  );
+};
+
+const ExampleItem = () => {
+  const [todo, setTodo] = useState<Todo>({
+    id: 1,
+    title: "Learn React Query",
+    completed: false,
+    dueDate: "2025-05-15T08:38:00",
+    priority: "high",
+  });
+  return (
+    <Item
+      todo={todo}
+      update={() =>
+        setTodo({
+          ...todo,
+          completed: !todo.completed,
+        })
+      }
+      remove={() => {}}
+    />
+  );
+};
 
 export const HowTo = () => (
   <>
@@ -24,7 +78,6 @@ export const HowTo = () => (
     </SlideLayout.Section>
     <SlideLayout.Center backgroundColor="#fff">
       <Stepper
-        tagName="p"
         alwaysVisible
         values={[
           incrementalStep1,
@@ -42,7 +95,7 @@ export const HowTo = () => (
         <ul>
           <li>
             Premièrement nous créerions une une vue qui nous permettrait
-            d'intégrer nos différent composants. La vue finale de notre
+            d'intégrer nos différents composants. La vue finale de notre
             application.
           </li>
           <li>
@@ -115,11 +168,170 @@ export const HowTo = () => (
         </ul>
       </Notes>
     </Slide>
+    <SlideLayout.Center backgroundColor="#F3E9D2">
+      <ExampleTitleInput />
+      <Notes>
+        Ici par exemple, pour vérifier le comportement du composant lorsqu'une
+        erreur survient, je suis obligé de jouer avec le formulaire
+      </Notes>
+    </SlideLayout.Center>
+    <Slide backgroundColor="#F3E9D2">
+      <FlexBox justifyContent="center" alignItems="center" height="100%">
+        <div className="w-3/4">
+          <ExampleItem />
+        </div>
+      </FlexBox>
+      <Notes>
+        Dans cet exemple, pour vérifier le comportement du composant lorsqu'une
+        tâche est complétée, je dois cliquer sur la checkbox
+      </Notes>
+    </Slide>
     <Slide backgroundImage="url(https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDBpdzRoNHl4bTRwMnpoeGV3N3lia3I1OW1naDl5emo4cTQzNWN3ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btPCcdNniyf0ArS/giphy.gif)">
       <Notes>
         Ici nous sommes dans une application assez simple, mais imaginez une
         grosse application ou une bibliothèque de composants ? La maintenabilité
         sera sans doute hardue
+      </Notes>
+    </Slide>
+    <SlideLayout.Section>
+      <Heading>How To: Isolation Des Composants</Heading>
+    </SlideLayout.Section>
+    <SlideLayout.Center backgroundColor="#fff">
+      <Stepper
+        alwaysVisible
+        values={[
+          isolatedTitleInput,
+          isolatedButton,
+          isolatedDueDateInput,
+          isolatedPriorityBadge,
+          isolatedItem,
+          isolatedList,
+        ]}
+      >
+        {(value) => <Image src={value} />}
+      </Stepper>
+      <Notes>
+        L'idée et de développer ses composants indépendemment des autres, sans
+        la nécessité d'avoir une vue principale.
+      </Notes>
+    </SlideLayout.Center>
+    <Slide backgroundImage={`url(${isolation})`}>
+      Photo de{" "}
+      <a href="https://unsplash.com/fr/@introspectivedsgn?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+        Erik Mclean
+      </a>{" "}
+      sur{" "}
+      <a href="https://unsplash.com/fr/photos/personne-en-pantalon-bleu-assise-sur-un-plancher-en-bois-brun-aCshJn3y93s?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+        Unsplash
+      </a>
+      <Notes>
+        L'isolation de composants vient en opposition à la technique précédente:
+        nos composants auront une vie en dehors de l'application, nous allons
+        les isoler pour les rendre indépendant ! Cela peut paraître antinomique,
+        mais vous allez comprendre.
+      </Notes>
+    </Slide>
+    <SlideLayout.BigFact>Avantages</SlideLayout.BigFact>
+    <Slide>
+      <Heading textAlign="left" margin="0 0">
+        Visualistion des Variantes
+      </Heading>
+      <iframe
+        height="100%"
+        src="http://localhost:6006/?path=/story/design-system-atoms-titleinput--default&globals=viewport:tablet"
+      />
+      <Notes>
+        Nous allons pouvoir tester les variantes d'un composant facilement (par
+        exemple: item validé)
+      </Notes>
+    </Slide>
+    <Slide>
+      <Heading>Intéractivité hors de l'application</Heading>
+      <iframe
+        height="100%"
+        src="http://localhost:6006/?path=/story/application-list--default&globals=viewport:tablet"
+      />
+    </Slide>
+    <Slide>
+      <CodePane language="tsx">
+        {`  
+          decorators: [
+            (Story) => {
+              const emit = useChannel({});
+              emit(HIGHLIGHT, {
+                elements: [".btn-primary"],
+              });
+              return (
+                <QueryClientProvider client={queryClient}>
+                  <MswWrapper>
+                    <Story />
+                  </MswWrapper>
+                </QueryClientProvider>
+              );
+            },
+          ],
+        `}
+      </CodePane>
+      <Heading textAlign="left" margin="0 0">
+        Mocks indépendants
+      </Heading>
+      <Notes>
+        Chaque composants va pouvoir être mocké tant au niveau des context, des
+        reqêtes d'API, etc
+      </Notes>
+    </Slide>
+    <Slide>
+      <Heading>Documentation organisée</Heading>
+      <iframe
+        height="100%"
+        src="http://localhost:6006/?path=/docs/design-system-atoms-titleinput--docs"
+      />
+      <Notes>Documenter chaque composant de manière organisé</Notes>
+    </Slide>
+    <Slide>
+      <Heading>Styleguide interactif</Heading>
+      <iframe height="100%" src="http://localhost:6006" />
+      <Notes>
+        Nous aurons à notre disposition un styleguide interactif, partageable
+        avec tous les acteurs du projets
+      </Notes>
+    </Slide>
+    <Slide>
+      <Image src={interactionsTest} />
+      <Heading textAlign="left" margin="0 0">
+        Tests intégrés
+      </Heading>
+      <Notes>Tester les composants dans une CI</Notes>
+    </Slide>
+    <Slide>
+      <Heading>Réflexion sur l'API</Heading>
+      <CodePane language="tsx">
+        {`
+          import { HTMLAttributes } from "react";
+
+          export const SubmitButton = (
+            props: HTMLAttributes<HTMLButtonElement> & {
+              isPending: boolean;
+              label: string;
+            }
+          ) => {
+            const { isPending, label, ...rest } = props;
+            return (
+              <button
+                className="btn btn-lg btn-primary join-item"
+                type="submit"
+                disabled={isPending}
+                {...rest}
+              >
+                {isPending ? <span className="loading loading-spinner"></span> : label}
+              </button>
+            );
+          };
+        `}
+      </CodePane>
+      <Notes>
+        Cette manière de développer force les développeurs à réfléchir à l'API
+        de chaque composant pour ce celle ci soit maintenable
       </Notes>
     </Slide>
   </>
