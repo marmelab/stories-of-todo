@@ -7,6 +7,14 @@ storybook:
 	@echo "Starting Storybook..."
 	npm run storybook
 
+storybook-build:
+	@echo "Building Storybook..."
+	npm run storybook:build
+
+storybook-serve:
+	@echo "Running Storybook..."
+	npm run storybook:serve
+
 start-api:
 	@echo "Starting..."
 	cd api && docker compose up -d
@@ -23,7 +31,7 @@ dev:
 	@echo "Starting dev..."
 	npm run dev
 
-start:
+preview:
 	@echo "Starting..."
 	cd api && docker compose up -d
 	npm run build

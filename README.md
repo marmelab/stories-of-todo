@@ -87,3 +87,14 @@ To run the [interactions-tests](https://storybook.js.org/docs/writing-tests/inte
 make storybook # if not already running
 make interaction-test
 ```
+
+## Run Presentation
+
+To run the presentation, run the following command:
+
+```bash
+make storybook-build
+make storybook-serve
+# in another terminal
+make preview
+```
