@@ -6,6 +6,8 @@ import { MswWrapper } from "../msw/MswWrapper";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { expect, fireEvent, userEvent, within } from "@storybook/test";
 
+const queryClient = new QueryClient();
+
 const meta: Meta<typeof Todos> = {
   title: "Application/Todos",
   component: Todos,
@@ -37,7 +39,6 @@ export default meta;
 
 type Story = StoryObj<typeof Todos>;
 
-const queryClient = new QueryClient();
 
 export const Application: Story = {
   play: async ({ canvasElement }) => {
