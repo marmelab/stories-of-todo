@@ -57,9 +57,13 @@ export const HackDay = () => (
       </FlexBox>
       <Notes>
         En développant mon POC, j'ai été confronté à plusieurs problèmes assez
-        bloquant, et j'ai remarqué que l'app B2B souffrait de quelques retards
-        par rapport à React-admin. La démo de mon POC devant mes collègues n'a
-        pas eut l'effet WAHOU que j'espérait.
+        bloquant. J'ai commencé à débogguer api-platorm/admin pour comprendre
+        d'où venait ces problèmes. Mais pour installer un environnement de dev,
+        il fallait disposer d'une application déjà existante, et la lier avec
+        `yarn link`. J'ai dû donc créer une appli test et j'ai remarqué que
+        l'app B2B souffrait de quelques retards par rapport à React-admin. La
+        démo de mon POC devant mes collègues n'a pas eut l'effet WAHOU que
+        j'espérait.
       </Notes>
     </Slide>
     <Slide>
