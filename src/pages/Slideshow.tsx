@@ -11,6 +11,8 @@ import {
   Yata,
   HowTo,
 } from "@/slides";
+import { Demo } from "@/slides/Demo";
+import { Thanks } from "@/slides/Thanks";
 import { Deck, DeckProps, DefaultTemplate } from "spectacle";
 
 const theme: DeckProps["theme"] = {
@@ -34,6 +36,8 @@ export const Slideshow = () => (
     <What />
     <Yata />
     <HowTo />
+    <Demo />
     <Conclusion />
+    <Thanks />
   </Deck>
 );
