@@ -3,7 +3,7 @@ import { create } from "@storybook/theming/create";
 export default create({
   base: "dark",
   brandTitle: "Todo App",
-  brandUrl: "https://example.com",
+  brandUrl: "https://marmelab.com",
   brandTarget: "_self",
   fontBase: '"Open Sans", sans-serif',
   fontCode: "monospace",
