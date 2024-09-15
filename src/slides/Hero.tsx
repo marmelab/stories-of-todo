@@ -8,7 +8,6 @@ export const Hero = () => (
     src={me}
     alt="Adrien Guernier"
     title="Adrien Guernier"
-    imgContainerProps={{ style: { borderRadius: "100%" } }}
     listItems={[
       "Développeur fullstack chez Marmelab",
       "Membre de la Core Team de React-Admin",
