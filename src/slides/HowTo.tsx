@@ -277,7 +277,9 @@ export const HowTo = () => (
       </Heading>
       <Notes>
         Chaque composants va pouvoir être mocké tant au niveau des context, des
-        reqêtes d'API, etc
+        reqêtes d'API, etc. Même si certaines méthodes d'API ne sont pas prêtes,
+        je vais pouvoir utiliser des données mockées pour développer mes
+        composants
       </Notes>
     </Slide>
     <Slide>
