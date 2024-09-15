@@ -8,11 +8,13 @@ import {
   Slide,
   Text,
 } from "spectacle";
+import ReactMarkdown from "react-markdown";
 import errorBlocked from "@/assets/error-blocked.jpg";
 import reactAdminContribs from "@/assets/react-admin-contribs.png";
 import apiPlatformAdminContribs from "@/assets/api-platform-admin-contribs.png";
 import uxThinking from "@/assets/ux-thinking.jpg";
 import pr541 from "@/assets/pr-541.png";
+import hackday from "./hackday.md";
 
 export const HackDay = () => (
   <>
@@ -72,108 +74,11 @@ export const HackDay = () => (
         `yarn link`.
       </Notes>
     </Slide>
-    <Slide>
-      <CodePane language="md">
-        {`
-          #### Linking the Source Version to an Existing Project
-
-          If you already have a project in progress, you can develop directly from it.
-
-          The instructions below explain how to install the source version of API Platform Admin 
-          in your project and contribute a patch.
-
-          Your client should already use \`@api-platform/admin\` and its bootstrap file (usually: \`src/App.tsx\`) 
-          should at least contains: 
-        `}
-      </CodePane>
-      <CodePane language="tsx">
-        {`
-          import React from 'react';
-          import { HydraAdmin } from '@api-platform/admin';
-
-          function App() {
-            return (
-              <HydraAdmin entrypoint="https://demo.api-platform.com" />
-            )
-          }
-
-          export default App;
-        `}
-      </CodePane>
-    </Slide>
-    <Slide>
-      <CodePane language="md">
-        {`
-          Install your own version of \`@api-platform/admin\`:
-
-          First, clone the repository and install its dependencies:
-        `}
-      </CodePane>
-      <CodePane language="shell">
-        {`
-          cd ..
-          git clone https://github.com/api-platform/admin.git
-        `}
-      </CodePane>
-      <CodePane language="md">
-        {`
-          Link it:
-        `}
-      </CodePane>
-      <CodePane language="shell">
-        {`
-          cd admin
-          yarn link
-          cd ../<yourproject>
-          yarn link "@api-platform/admin"
-        `}
-      </CodePane>
-      <CodePane language="md">
-        {`
-          Use the React version of your project to build \`@api-platform/admin\`:
-        `}
-      </CodePane>
-      <CodePane language="shell">
-        {`
-          cd node_modules/react/
-          yarn link
-          cd ../../../admin
-          yarn link react
-        `}
-      </CodePane>
-    </Slide>
-    <Slide>
-      <CodePane language="md">
-        {`
-          Build continuously your \`@api-platform/admin\` version:
-        `}
-      </CodePane>
-      <CodePane language="shell">
-        {`
-          yarn install --force
-          yarn watch
-        `}
-      </CodePane>
-      <CodePane language="md">
-        {`
-          Open a new terminal console with the same path.
-
-          Start your client:
-        `}
-      </CodePane>
-      <CodePane language="shell">
-        {`
-          cd ../<yourproject>/
-          yarn install --force
-          yarn dev --force
-        `}
-      </CodePane>
-      <CodePane language="md">
-        {`
-          > You can now hack in the cloned repository of \`api-platform-admin\`.
-        `}
-      </CodePane>
-      <Heading>CONTRIBUTING.md 🤯</Heading>
+    <Slide backgroundColor="#0D1117">
+      <Box className="overflow-auto">
+        <ReactMarkdown className="markdown-body" children={hackday} />
+        <Heading>CONTRIBUTING.md 🤯</Heading>
+      </Box>
       <Notes>
         J'ai donc créé une appli test et j'ai remarqué que le projet
         api-platform/admin n'avait pas intégré certaines mises de React-admin.
@@ -333,15 +238,14 @@ export const HackDay = () => (
                       run: docker compose exec -T pwa yarn storybook:test --url http://127.0.0.1:3000 --maxWorkers 1
         `}
       </CodePane>
-      <Notes>
-        et de CI, nous avons réussi à mettre en place environnements de dev
-        solide et facilement maintenable pour des développeurs React (et
-        React-admin)
-      </Notes>
+      <Notes>et de CI</Notes>
     </Slide>
 
     <Slide backgroundImage={`url(${pr541})`} backgroundSize="contain">
       <Notes>
+        Nous avons réussi à mettre en place environnements de dev solide et
+        facilement maintenable pour des développeurs React (et React-admin).{" "}
+        <br />
         Je ne vais pas vous expliquer en détail comment nous avons développé cet
         environnement. Vous trouverez des PR assez détaillées sur le sujet,
         notamment celle à l'écran.
