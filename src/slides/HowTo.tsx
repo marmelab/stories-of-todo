@@ -1,5 +1,4 @@
 import {
-  Appear,
   CodePane,
   FlexBox,
   Heading,
@@ -281,11 +280,11 @@ export const HowTo = () => (
       <Notes>Documenter chaque composant de manière organisé</Notes>
     </Slide>
     <Slide>
-      <Heading>Styleguide interactif</Heading>
+      <Heading>Bibliothèque de composants</Heading>
       <iframe height="100%" src="http://localhost:6006" />
       <Notes>
-        Nous aurons à notre disposition un styleguide interactif, partageable
-        avec tous les acteurs du projets
+        Nous aurons à notre disposition à une bibliothèque de composants,
+        partageable avec tous les acteurs du projets
       </Notes>
     </Slide>
     <Slide>
@@ -294,37 +293,6 @@ export const HowTo = () => (
         Tests intégrés
       </Heading>
       <Notes>Tester les composants dans une CI</Notes>
-    </Slide>
-    <Slide>
-      <Heading>Réflexion sur l'API</Heading>
-      <CodePane language="tsx">
-        {`
-          import { HTMLAttributes } from "react";
-
-          export const SubmitButton = (
-            props: HTMLAttributes<HTMLButtonElement> & {
-              isPending: boolean;
-              label: string;
-            }
-          ) => {
-            const { isPending, label, ...rest } = props;
-            return (
-              <button
-                className="btn btn-lg btn-primary join-item"
-                type="submit"
-                disabled={isPending}
-                {...rest}
-              >
-                {isPending ? <span className="loading loading-spinner"></span> : label}
-              </button>
-            );
-          };
-        `}
-      </CodePane>
-      <Notes>
-        Cette manière de développer force les développeurs à réfléchir à l'API
-        de chaque composant pour ce celle ci soit maintenable
-      </Notes>
     </Slide>
   </>
 );
