@@ -1,4 +1,5 @@
 import {
+  Box,
   FlexBox,
   Heading,
   Image,
@@ -11,6 +12,20 @@ import todoListPostIt from "../assets/todolist-postit.jpg";
 import todoListComponent from "../assets/todo-list-component.png";
 import todoFormComponent from "../assets/todo-form-component.png";
 import todoItemComponent from "../assets/todo-item-component.png";
+import { Todos } from "@/components/Todos";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MswWrapper } from "@/msw/MswWrapper";
+
+const MyTodo = () => {
+  const queryClient = new QueryClient();
+  return (
+    <QueryClientProvider client={queryClient}>
+      <MswWrapper>
+        <Todos />
+      </MswWrapper>
+    </QueryClientProvider>
+  );
+};
 
 export const Yata = () => (
   <>
@@ -56,6 +71,16 @@ export const Yata = () => (
         "Supprimer une tâche",
       ]}
     />
+    <Slide>
+      <Box className="overflow-auto">
+        <MyTodo />
+      </Box>
+      <Notes>
+        Voici un exemple de Todolist, avec les fonctionnalités que nous avons
+        évoqué plus haut. Si je souhaite tester un composant, je dois lancer
+        lancer toute l'application et jouer avec les différents composants.
+      </Notes>
+    </Slide>
     <SlideLayout.Section>
       <Heading>Composants</Heading>
       <Notes>
