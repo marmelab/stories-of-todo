@@ -10,8 +10,6 @@ import {
 } from "spectacle";
 import ReactMarkdown from "react-markdown";
 import errorBlocked from "@/assets/error-blocked.jpg";
-import reactAdminContribs from "@/assets/react-admin-contribs.png";
-import apiPlatformAdminContribs from "@/assets/api-platform-admin-contribs.png";
 import uxThinking from "@/assets/ux-thinking.jpg";
 import pr541 from "@/assets/pr-541.png";
 import hackday from "./hackday.md";
@@ -85,20 +83,6 @@ export const HackDay = () => (
         J'ai passé beaucoup plus de temps à débogguer qu'à travailler sur mon
         projet. La démo de mon POC devant mes collègues n'a pas eut l'effet
         WAHOU que j'espérait.
-      </Notes>
-    </Slide>
-    <Slide>
-      <FlexBox flexDirection="row" alignItems="start" flex={1}>
-        <Box width="100%">
-          <Image src={reactAdminContribs} />
-        </Box>
-        <Box width="100%">
-          <Image src={apiPlatformAdminContribs} />
-        </Box>
-      </FlexBox>
-      <Notes>
-        Il faut dire que depuis la première intégration de React-admin à
-        Api-platform, les outils ont évolué à différents rythmes.
       </Notes>
     </Slide>
     <Slide backgroundImage="url(https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTltOW9tbXdhYnIwMzQ4c3BsMDJsd2lkdGJwdzd6aHNodnUyNjllZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1zRgQYRbZWFXGZ1Tgw/giphy.gif)">
