@@ -130,21 +130,11 @@ export const HowTo = () => (
     <Slide>
       <Heading>Inconvénients</Heading>
       <UnorderedList>
-        <Appear>
-          <ListItem>Composants dépendants de l'application</ListItem>
-        </Appear>
-        <Appear>
-          <ListItem>Tests difficiles à écrire</ListItem>
-        </Appear>
-        <Appear>
-          <ListItem>Documentation potentiellement incomplète</ListItem>
-        </Appear>
-        <Appear>
-          <ListItem>Difficulté à partager des composants</ListItem>
-        </Appear>
-        <Appear>
-          <ListItem>Incohérences de design</ListItem>
-        </Appear>
+        <ListItem>Composants dépendants de l'application</ListItem>
+        <ListItem>Tests difficiles à écrire</ListItem>
+        <ListItem>Documentation potentiellement incomplète</ListItem>
+        <ListItem>Difficulté à partager des composants</ListItem>
+        <ListItem>Incohérences de design</ListItem>
       </UnorderedList>
       <Notes>
         Cette manière de développer est la plus évidente, mais elle apporte son

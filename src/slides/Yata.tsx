@@ -48,7 +48,6 @@ export const Yata = () => (
     </Slide>
     <SlideLayout.List
       title="Un utilisateur peut"
-      animateListItems={true}
       listType="unordered"
       items={[
         "Voir la liste des tâches à réaliser",
