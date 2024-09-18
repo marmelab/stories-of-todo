@@ -34,6 +34,9 @@ class Todo
     #[ORM\Column(length: 255, enumType: Priority::class)]
     private ?Priority $priority = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $completedAt = null;
+
     public function __construct()
     {
         $this->dueDate = new \DateTimeImmutable();
@@ -88,6 +91,18 @@ class Todo
     public function setPriority(Priority $priority): static
     {
         $this->priority = $priority;
+
+        return $this;
+    }
+
+    public function getCompletedAt(): ?\DateTimeImmutable
+    {
+        return $this->completedAt;
+    }
+
+    public function setCompletedAt(?\DateTimeImmutable $completedAt): static
+    {
+        $this->completedAt = $completedAt;
 
         return $this;
     }

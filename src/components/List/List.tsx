@@ -9,7 +9,11 @@ export const List = () => {
   const updateTodos = useUpdateTodo();
   const deteleTodo = useDeleteTodo();
   const toggleComplete: SubmitHandler<Todo> = (data) => {
-    updateTodos.mutate({ ...data, completed: !data.completed });
+    updateTodos.mutate({
+      ...data,
+      completed: !data.completed,
+      completedAt: !data.completed === true ? new Date().toISOString() : null,
+    });
   };
 
   const handleDeleteTodo = (id: number) => {

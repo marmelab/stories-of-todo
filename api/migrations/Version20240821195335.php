@@ -20,11 +20,10 @@ final class Version20240821195335 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP SEQUENCE greeting_id_seq CASCADE');
         $this->addSql('CREATE SEQUENCE todo_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
-        $this->addSql('CREATE TABLE todo (id INT NOT NULL, title VARCHAR(255) NOT NULL, completed BOOLEAN NOT NULL, due_date TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, priority VARCHAR(255) NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE todo (id INT NOT NULL, title VARCHAR(255) NOT NULL, completed BOOLEAN NOT NULL, due_date TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, completed_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, priority VARCHAR(255) NOT NULL, PRIMARY KEY(id))');
         $this->addSql('COMMENT ON COLUMN todo.due_date IS \'(DC2Type:datetime_immutable)\'');
-        $this->addSql('DROP TABLE greeting');
+        $this->addSql('COMMENT ON COLUMN todo.completed_at IS \'(DC2Type:datetime_immutable)\'');
     }
 
     public function down(Schema $schema): void
@@ -32,8 +31,6 @@ final class Version20240821195335 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE SCHEMA public');
         $this->addSql('DROP SEQUENCE todo_id_seq CASCADE');
-        $this->addSql('CREATE SEQUENCE greeting_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
-        $this->addSql('CREATE TABLE greeting (id INT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id))');
         $this->addSql('DROP TABLE todo');
     }
 }

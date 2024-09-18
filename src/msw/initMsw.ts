@@ -2,7 +2,7 @@ import { http } from "msw";
 import { setupWorker } from "msw/browser";
 //@ts-expect-error - Don't know why cannot find module 'fakerest'
 import { getMswHandler } from "fakerest";
-import data from "./data.json";
+import { data } from "./data";
 
 export const initMsw = async () => {
   const handler = getMswHandler({

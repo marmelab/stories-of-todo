@@ -1,6 +1,8 @@
+import clsx from "clsx";
 import { Todo } from "@/types/todo";
 import { PriorityBadge } from "@components/PriorityBadge/PriorityBadge";
-import clsx from "clsx";
+import { Countdown } from "@components/Countdown/Countdown";
+import { useCountdown } from "@components/Countdown/useCountdown";
 
 export const Item = ({
   todo,
@@ -19,8 +21,9 @@ export const Item = ({
     remove(todo.id);
   };
 
-  const date = new Date(todo.dueDate);
-  const dueDate = `${date.toLocaleDateString()} - ${date.toLocaleTimeString()}`;
+  const dueDate = new Date(todo.dueDate);
+  const completedAt = todo.completedAt ? new Date(todo.completedAt) : null;
+  const [days] = useCountdown(dueDate);
 
   return (
     <li className="card bg-base-300 rounded-box h-20 flex items-center flex-row justify-between px-10 mb-3">
@@ -35,7 +38,15 @@ export const Item = ({
         <div
           className={clsx(todo.completed && "line-through", "flex", "flex-col")}
         >
-          <span className={"text-xs"}>{dueDate}</span>
+          <span className={"text-xs"}>
+            {completedAt ? (
+              completedAt.toLocaleString()
+            ) : days < 100 ? (
+              <Countdown targetDate={dueDate} />
+            ) : (
+              dueDate.toLocaleString()
+            )}
+          </span>
           <span className={"text-lg"}>{todo.title}</span>
         </div>
       </div>
