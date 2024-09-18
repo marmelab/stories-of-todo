@@ -5,6 +5,7 @@ import { List } from "./List";
 import { expect, userEvent, within } from "@storybook/test";
 import { HIGHLIGHT } from "@storybook/addon-highlight";
 import { useChannel } from "storybook/internal/preview-api";
+import { data } from "@/msw/data";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,7 @@ const meta: Meta<typeof List> = {
       });
       return (
         <QueryClientProvider client={queryClient}>
-          <MswWrapper>
+          <MswWrapper data={data}>
             <Story />
           </MswWrapper>
         </QueryClientProvider>

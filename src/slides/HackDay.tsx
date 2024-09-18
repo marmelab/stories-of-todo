@@ -46,9 +46,7 @@ export const HackDay = () => (
         mais ce sont des jours où nous pouvons explorer une technologie,
         développer des projets, etc... Venant de l'univers PHP/Symfony, et
         fraîchement débarqué dans l'univers React, j'ai voulu m'amuser un peu
-        avec Api-platform et l'interface B2B. C'était l'occasion pour moi de
-        garder un pied dans PHP et de montrer à mes collègues que "PHP c'est
-        bien quand même !" 😄
+        avec Api-platform et l'interface B2B.
       </Notes>
     </Slide>
     <Slide backgroundImage={`url(${errorBlocked})`}>
@@ -81,8 +79,7 @@ export const HackDay = () => (
         J'ai donc créé une appli test et j'ai remarqué que le projet
         api-platform/admin n'avait pas intégré certaines mises de React-admin.
         J'ai passé beaucoup plus de temps à débogguer qu'à travailler sur mon
-        projet. La démo de mon POC devant mes collègues n'a pas eut l'effet
-        WAHOU que j'espérait.
+        projet.
       </Notes>
     </Slide>
     <Slide backgroundImage="url(https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTltOW9tbXdhYnIwMzQ4c3BsMDJsd2lkdGJwdzd6aHNodnUyNjllZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1zRgQYRbZWFXGZ1Tgw/giphy.gif)">

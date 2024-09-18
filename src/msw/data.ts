@@ -1,4 +1,4 @@
-const generateDate = (daysToAdd: number) => {
+export const generateDate = (daysToAdd: number) => {
   const now = new Date();
   now.setDate(now.getDate() + daysToAdd);
   return now;

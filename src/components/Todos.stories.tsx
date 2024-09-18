@@ -5,6 +5,7 @@ import { Todos } from "./Todos";
 import { MswWrapper } from "../msw/MswWrapper";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { expect, fireEvent, userEvent, within } from "@storybook/test";
+import { data } from "@/msw/data";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,7 @@ const meta: Meta<typeof Todos> = {
       });
       return (
         <QueryClientProvider client={queryClient}>
-          <MswWrapper>
+          <MswWrapper data={data}>
             <Story />
           </MswWrapper>
         </QueryClientProvider>
