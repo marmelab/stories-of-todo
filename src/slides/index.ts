@@ -6,6 +6,4 @@ export * from "./Hero";
 export * from "./HowTo";
 export * from "./ReactAdmin";
 export * from "./Title";
-export * from "./What";
 export * from "./Why";
-export * from "./Yata";
