@@ -31,11 +31,9 @@ const data = {
   todos: [],
 };
 
-const MyTodo = ({
-  queryClient = new QueryClient(),
-}: {
-  queryClient?: QueryClient;
-}) => {
+const queryClient = new QueryClient();
+
+const MyTodo = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <MswWrapper data={data}>
@@ -229,7 +227,7 @@ export const Problematic = () => (
       </Notes>
     </Slide>
     <Slide>
-      <MyTodo queryClient={new QueryClient()} />
+      <MyTodo />
       <Notes>
         Pour l'intégrer aux item par contre, je dois ajouter une tâche avec une
         date d'expiration passée pour voir le message d'erreur. Si le style ne
