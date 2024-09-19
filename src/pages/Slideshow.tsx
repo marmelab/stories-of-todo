@@ -1,18 +1,16 @@
 import {
   ApiPlatformAdmin,
-  B2bApp,
   HackDay,
   Hero,
-  ReactAdmin,
   Conclusion,
   Title,
-  Why,
   HowTo,
+  Component,
+  Demo,
+  Thanks,
+  Problematic,
+  Summary,
 } from "@/slides";
-import { Component } from "@/slides/Component";
-import { Demo } from "@/slides/Demo";
-import { Problematic } from "@/slides/Problematic";
-import { Thanks } from "@/slides/Thanks";
 import { Deck, DeckProps, DefaultTemplate } from "spectacle";
 
 const theme: DeckProps["theme"] = {
@@ -28,14 +26,12 @@ export const Slideshow = () => (
   <Deck theme={theme} template={<DefaultTemplate />}>
     <Title />
     <Hero />
+    <Summary />
     <Component />
     <Problematic />
     <HowTo />
     <Demo />
-    <B2bApp />
     <ApiPlatformAdmin />
-    <ReactAdmin />
-    <Why />
     <HackDay />
     <Conclusion />
     <Thanks />

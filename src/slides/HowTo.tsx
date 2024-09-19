@@ -56,6 +56,16 @@ export const HowTo = () => (
         mais vous allez comprendre.
       </Notes>
     </Slide>
+    <Slide>
+      <Heading textAlign="left" margin="0 0">
+        Storybook
+      </Heading>
+      <iframe height="100%" src="https://storybook.js.org/showcase/projects" />
+      <Notes>
+        L'outil Storybook va nous fournir un environnement de développement
+        idéal pour développer nos composants de manière isolée.
+      </Notes>
+    </Slide>
     <SlideLayout.BigFact>Avantages</SlideLayout.BigFact>
     <Slide>
       <Heading textAlign="left" margin="0 0">

@@ -33,20 +33,12 @@ export const Demo = () => (
           Montrer le composant Todos, son code, sa story, le Wrapper MSW pour
           les mocks. Montrer le test d'interaction et son code
         </li>
+        <li>AJouter une variante à la story Countdwon</li>
+        <li>AJouter une variante à la story Item</li>
         <li>
           Montrer la doc de l'API puis montrer l'application TodoList connectée
           à l'API.
         </li>
-        <li>Montrer l'admin</li>
-        <li>
-          <a
-            href="https://react-admin-storybook-marmelab.vercel.app/"
-            target="_blank"
-          >
-            Montrer le storybook de react-admin
-          </a>
-        </li>
-        <li>Lancer api-platform/admin et montrer le storybook</li>
       </ul>
     </Notes>
   </SlideLayout.BigFact>

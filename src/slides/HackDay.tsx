@@ -1,18 +1,7 @@
-import {
-  Box,
-  CodePane,
-  FlexBox,
-  Heading,
-  Image,
-  Notes,
-  Slide,
-  Text,
-} from "spectacle";
-import ReactMarkdown from "react-markdown";
+import { CodePane, FlexBox, Image, Notes, Slide, Text } from "spectacle";
 import errorBlocked from "@/assets/error-blocked.jpg";
 import uxThinking from "@/assets/ux-thinking.jpg";
 import pr541 from "@/assets/pr-541.png";
-import hackday from "./hackday.md";
 
 export const HackDay = () => (
   <>
@@ -42,11 +31,12 @@ export const HackDay = () => (
         }}
       />
       <Notes>
-        À Marmelab, nous avons des Hack Days: nous ne sommes pas des Hackers,
-        mais ce sont des jours où nous pouvons explorer une technologie,
-        développer des projets, etc... Venant de l'univers PHP/Symfony, et
-        fraîchement débarqué dans l'univers React, j'ai voulu m'amuser un peu
-        avec Api-platform et l'interface B2B.
+        À Marmelab, nous avons des jours où nous pouvons explorer une
+        technologie, développer un projet, etc... c'est ce que nous appelons de
+        Hack Days. Venant de l'univers PHP/Symfony, et fraîchement débarqué dans
+        l'univers React et étant contributeur React-admin, j'ai voulu m'amuser
+        un peu avec Api-platform et l'interface B2B. Cela me paraissait être un
+        bon parallèle.
       </Notes>
     </Slide>
     <Slide backgroundImage={`url(${errorBlocked})`}>
@@ -63,39 +53,25 @@ export const HackDay = () => (
         </Text>
       </FlexBox>
       <Notes>
-        En développant mon POC, j'ai été confronté à plusieurs problèmes assez
-        bloquant. J'ai commencé à débogguer api-platorm/admin pour comprendre
-        d'où venait ces problèmes. Mais pour installer un environnement de dev,
-        il fallait disposer d'une application déjà existante, et la lier avec
-        `yarn link`.
-      </Notes>
-    </Slide>
-    <Slide backgroundColor="#0D1117">
-      <Box className="overflow-auto">
-        <ReactMarkdown className="markdown-body" children={hackday} />
-        <Heading>CONTRIBUTING.md 🤯</Heading>
-      </Box>
-      <Notes>
-        J'ai donc créé une appli test et j'ai remarqué que le projet
-        api-platform/admin n'avait pas intégré certaines mises de React-admin.
-        J'ai passé beaucoup plus de temps à débogguer qu'à travailler sur mon
-        projet.
+        En explorant api-platform/admin, j'ai été confronté à plusieurs
+        problèmes. J'ai commencé à débogguer le code pour comprendre d'où venait
+        ces problèmes. J'ai passé beaucoup de temps à mettre en place un
+        environment de dev et à débogguer.
       </Notes>
     </Slide>
     <Slide backgroundImage="url(https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTltOW9tbXdhYnIwMzQ4c3BsMDJsd2lkdGJwdzd6aHNodnUyNjllZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1zRgQYRbZWFXGZ1Tgw/giphy.gif)">
       <Notes>
         J'ai trouvé la DX un tantinet compliquée et j'ai fait le parallèle avec
-        la manière dont nous avons de développer React-admin et je me suis dit
-        que le DX pourrait plus simple.
+        la manière dont nous dévloppons React-admin avec Storybook, et je me
+        suis dit que le DX pourrait plus simple.
       </Notes>
     </Slide>
-    <Slide backgroundImage="url(https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGF3OXE5cmM5YnAxNHJyaXZoNnRidWxhcHY4YTZiM3N1Z3cyODJzcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lVBtp4SRW6rvDHf1b6/giphy.gif)">
+    <Slide backgroundImage="url(https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExanRud2l1cnBzYjY1MHY3MzMyN3ExMzlkNWhkeWh3amZ4aXcxYm5hNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dxn6fRlTIShoeBr69N/giphy.gif)">
       <Notes>
         J'ai fait part de mes retours à la core team React-admin, et nous avons
-        conclu que cela serait profitable pour tout le monde de corriger et de
-        mettre à jour api-platform/admin. Mais pour cela il nous fallait un
-        environnement de dev qui convienne à notre manière de travailler sur
-        React-admin.
+        avons décidé de contribuer à api-platform/admin. Mais pour cela il nous
+        fallait un environnement de dev qui convienne à notre manière de
+        travailler sur React-admin.
       </Notes>
     </Slide>
     <Slide>
@@ -227,9 +203,8 @@ export const HackDay = () => (
         Nous avons réussi à mettre en place environnements de dev solide et
         facilement maintenable pour des développeurs React (et React-admin).{" "}
         <br />
-        Je ne vais pas vous expliquer en détail comment nous avons développé cet
-        environnement. Vous trouverez des PR assez détaillées sur le sujet,
-        notamment celle à l'écran.
+        Vous trouverez des PR assez détaillées sur le sujet, notamment celle à
+        l'écran.
         <a href="https://github.com/api-platform/admin/pull/541">
           chore: make the development process easier with Storybook #541
         </a>

@@ -22,6 +22,7 @@ import incrementalStep4 from "@/assets/incremental-step-4.png";
 import incrementalStep5 from "@/assets/incremental-step-5.png";
 import incrementalStep6 from "@/assets/incremental-step-6.png";
 import incrementalStep7 from "@/assets/incremental-step-7.png";
+import electricity from "@/assets/electricity.jpg";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MswWrapper } from "@/msw/MswWrapper";
 import { Todos } from "@/components/Todos";
@@ -30,8 +31,11 @@ const data = {
   todos: [],
 };
 
-const MyTodo = () => {
-  const queryClient = new QueryClient();
+const MyTodo = ({
+  queryClient = new QueryClient(),
+}: {
+  queryClient?: QueryClient;
+}) => {
   return (
     <QueryClientProvider client={queryClient}>
       <MswWrapper data={data}>
@@ -172,11 +176,29 @@ export const Problematic = () => (
     <Slide>
       <MyTodo />
       <Notes>
-        Voici un exemple de Todolist, avec les fonctionnalités que nous avons
-        évoqué plus haut. Pour voir une item de liste, je dois ajouter ajouter
-        une tâche. Pour voir le style d'une tâche réalisée, je dois la marquer
-        comme réalisée. Pour voir le formulaire en erreur, je dois ajouter une
-        tâche sans titre, etc
+        Voici notre Todolist en cours de développement. Plusieurs problèmes:
+        <ul>
+          <li>
+            Si je souhaite développer un item de list, je dois ajouter ajouter
+            une tâche, puis développer mon composant
+          </li>
+          <li>
+            Pour développer le style d'une tâche réalisée, je dois ajouter une
+            tâche et la marquer comme réalisée.
+          </li>
+          <li>
+            Pour voir le formulaire en erreur, je dois ajouter une tâche sans
+            titre, etc
+          </li>
+          <li>
+            Imaginons maintenant que nous devions intégrer le composant
+            Countdown dans les items de liste et l'afficher seulement s'il reste
+            99 jours avant la date d'expiration de la tâche. Si je veux
+            développer cette fonctionnalité, je dois ajouter une todo, avec une
+            date d'expiration inférieur à 99 jours, puis développer mon
+            composant.
+          </li>
+        </ul>
       </Notes>
     </Slide>
     <Slide>
@@ -202,20 +224,16 @@ export const Problematic = () => (
       </span>
       <Notes>
         Imaginons que je souhaite ajouter afficher un message d'erreur si la
-        date est dépassée. Je vais modifier le composant Countdown pour afficher
-        ce message. Aucun problème ici.
+        date d'échéance est dépassée. Je modifie le composant Countdown pour
+        afficher ce message. Aucun problème ici.
       </Notes>
     </Slide>
     <Slide>
-      <MyTodo />
+      <MyTodo queryClient={new QueryClient()} />
       <Notes>
-        Imaginons maintenant que nous devions intégrer le composant Countdown
-        dans les items de liste et l'afficher seulement s'il reste 99 jours
-        avant la date d'expiration de la tâche. Si je veux tester cette
-        modification, je dois modifier les données des todo et naviguer dans
-        l'application pour trouver le composant Item et le tester. Ou je peux
-        aussi ajouter une todo avec une date d'expiration passé pour que le
-        message s'affiche
+        Pour l'intégrer aux item par contre, je dois ajouter une tâche avec une
+        date d'expiration passée pour voir le message d'erreur. Si le style ne
+        me convient pas, je dois modifier mon composant
       </Notes>
     </Slide>
     <Slide>
@@ -256,7 +274,19 @@ export const Problematic = () => (
         sera sans doute hardue
       </Notes>
     </Slide>
-    <Slide>
+    <Slide backgroundImage={`url(${electricity})`}>
+      <FlexBox height="100%" justifyContent="center" alignItems="end">
+        <Text fontSize={20}>
+          Photo de{" "}
+          <a href="https://unsplash.com/fr/@framesforyourheart?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+            Frames For Your Heart
+          </a>{" "}
+          sur{" "}
+          <a href="https://unsplash.com/fr/photos/fils-enduits-jaunes-bleus-et-noirs-iOLHAIaxpDA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+            Unsplash
+          </a>
+        </Text>
+      </FlexBox>
       <Notes>
         À mesure que les front-ends se développent, le nombre de composants
         gonfle. Les projets matures peuvent contenir des centaines de composants
