@@ -15,6 +15,9 @@ import isolatedItem from "@/assets/isolated-item.png";
 import isolatedPriorityBadge from "@/assets/isolated-priority-badge.png";
 import isolatedDueDateInput from "@/assets/isolated-due-date-input.png";
 import interactionsTest from "@/assets/interactions-test.png";
+import storybookStats from "@/assets/storybook-stats.png";
+import storybookUsage from "@/assets/storybook-usage.png";
+import testCi from "@/assets/test-ci.png";
 
 export const HowTo = () => (
   <>
@@ -60,10 +63,15 @@ export const HowTo = () => (
       <Heading textAlign="left" margin="0 0">
         Storybook
       </Heading>
-      <iframe height="100%" src="https://storybook.js.org/showcase/projects" />
+      <div className="flex ">
+        <Image src={storybookStats} />
+        <Image src={storybookUsage} />
+      </div>
       <Notes>
         L'outil Storybook va nous fournir un environnement de développement
-        idéal pour développer nos composants de manière isolée.
+        idéal pour développer nos composants de manière isolée. Comme vous le
+        voyez, Storybook est utilisé dans de nombreux projet et est activement
+        maintenu
       </Notes>
     </Slide>
     <SlideLayout.BigFact>Avantages</SlideLayout.BigFact>
@@ -138,7 +146,16 @@ export const HowTo = () => (
       <Heading textAlign="left" margin="0 0">
         Tests intégrés
       </Heading>
-      <Notes>Tester les composants dans une CI</Notes>
+      <Notes>
+        Nous pouvons tester nos composants directement dans les stories
+      </Notes>
+    </Slide>
+    <Slide>
+      <Image src={testCi} />
+      <Heading textAlign="left" margin="0 0">
+        CI
+      </Heading>
+      <Notes>Et ces tests peuvent être directement executé dans la CI</Notes>
     </Slide>
   </>
 );

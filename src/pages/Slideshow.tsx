@@ -20,6 +20,10 @@ const theme: DeckProps["theme"] = {
     tertiary: "#0d1026", // background
     quaternary: "#F3E9D2",
   },
+  fonts: {
+    header: "Courier New",
+    text: "Arial",
+  },
 };
 
 export const Slideshow = () => (

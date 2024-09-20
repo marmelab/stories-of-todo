@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Slide, Notes, Heading, SlideLayout } from "spectacle";
 import reactAdmin from "@/assets/react-admin.png";
-import why from "@/assets/why.jpg";
 import b2bInterface from "@/assets/b2b-interface.png";
 
 export const ApiPlatformAdmin = () => (
@@ -56,30 +55,5 @@ export const ApiPlatformAdmin = () => (
         React-admin ? Qui utilise React-admin ?
       </Notes>
     </Slide>
-    <SlideLayout.BigFact
-      backgroundImage={`url(${why})`}
-      backgroundOpacity={0.4}
-      factInformation={
-        <>
-          Photo de{" "}
-          <a href="https://unsplash.com/fr/@emilymorter?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-            Emily Morter
-          </a>{" "}
-          sur{" "}
-          <a href="https://unsplash.com/fr/photos/point-dinterrogation-signalisation-au-neon-8xAA0f9yQnE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-            Unsplash
-          </a>
-        </>
-      }
-      factInformationProps={{
-        fontSize: "1.5rem",
-        theme: "dark",
-      }}
-    >
-      Why
-      <Notes>
-        <p>Pourquoi je vous parles de ces outils ? Un peu de mise en context</p>
-      </Notes>
-    </SlideLayout.BigFact>
   </>
 );

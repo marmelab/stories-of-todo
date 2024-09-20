@@ -7,7 +7,7 @@ export const Summary = () => (
     title="Sommaire"
     items={[
       "Définition d'un composant ?",
-      "Problèmatique",
+      "Yet Another Todolist App",
       "Isolation ses composants",
       "Demo",
       "Api-platform/admin",

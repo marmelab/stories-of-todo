@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Todos } from "@/components/Todos";
+import { Toast } from "@/components/Toast/Toast";
 
 const queryClient = new QueryClient();
 export const TodosApp = () => (
@@ -9,6 +10,7 @@ export const TodosApp = () => (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <Todos />
+      <Toast />
     </QueryClientProvider>
   </div>
 );

@@ -48,6 +48,12 @@ export const Component = () => (
     <SlideLayout.Section>
       <Heading>C'est quoi un composant ?</Heading>
     </SlideLayout.Section>
+    <SlideLayout.BigFact
+      backgroundColor="red"
+      factInformation="vous allez voir du JavaScript"
+    >
+      <Heading>Warning</Heading>
+    </SlideLayout.BigFact>
     <Slide>
       <Box className="overflow-auto">
         <CodePane language="tsx">
@@ -55,7 +61,7 @@ export const Component = () => (
             import { CSSProperties } from "react";
             import { useCountdown } from "./useCountdown";
 
-            const Countdown = ({ targetDate }: { targetDate: Date }) => {
+            export const Countdown = ({ targetDate }: { targetDate: Date }) => {
               const [days, hours, minutes, seconds] = useCountdown(targetDate);
 
               return (
@@ -92,10 +98,10 @@ export const Component = () => (
       </Box>
       <Notes>
         Un composant est une unité de code JavaScript qui représente une partie
-        de l’interface utilisateur (UI) d’une application. Ils se veulent
-        réutilisables et modulaires. Un composant nous permet de modifier notre
+        de l’interface utilisateur (UI) d’une application. Un composant se veut
+        réutilisable et modulaire. Un composant nous permet de modifier notre
         code à un seul endroit et de voir ces modifications propagées partout où
-        ce composant est utilisé.
+        ce composant est utilisé. Ici nous avons un composant de Compte à rebour
       </Notes>
     </Slide>
     <Slide>

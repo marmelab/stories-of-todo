@@ -8,10 +8,11 @@ export const Title = () => (
     <div className="divider" />
     <Text fontSize={16}>Adrien Guernier - Marmelab</Text>
     <Notes>
-      Dans cette conférence, nous allons voir développer une application
-      frontend, en isolant les composants. Quelle problèmatique cela résoud,
-      comment cela va nous aider à développer une application plus robuste et
-      comment Storybook peut nous y aider.
+      Dans cette conférence, nous allons voir comment développer une application
+      frontend, en isolant les composants. Quelle problèmatique cela résoud
+      d'isoler ses composants, comment faire pour développer une application
+      plus robuste et comment Storybook peut nous y aider. Est-ce qu'il y'a des
+      développeur front-end dans la salle ? Des développeurs React ?
     </Notes>
   </SlideLayout.Center>
 );

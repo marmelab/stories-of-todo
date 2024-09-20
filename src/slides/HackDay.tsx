@@ -31,12 +31,8 @@ export const HackDay = () => (
         }}
       />
       <Notes>
-        À Marmelab, nous avons des jours où nous pouvons explorer une
-        technologie, développer un projet, etc... c'est ce que nous appelons de
-        Hack Days. Venant de l'univers PHP/Symfony, et fraîchement débarqué dans
-        l'univers React et étant contributeur React-admin, j'ai voulu m'amuser
-        un peu avec Api-platform et l'interface B2B. Cela me paraissait être un
-        bon parallèle.
+        Faisant partie de la Core Team React-admin, j'ai voulu explorer le
+        projet api-platform/admin pour en voir ces fonctionnalités
       </Notes>
     </Slide>
     <Slide backgroundImage={`url(${errorBlocked})`}>

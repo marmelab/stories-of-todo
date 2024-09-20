@@ -9,8 +9,6 @@ export const Toast = () => (
     newestOnTop={false}
     closeOnClick
     rtl={false}
-    pauseOnFocusLoss
-    draggable
     pauseOnHover={false}
     theme="dark"
   />

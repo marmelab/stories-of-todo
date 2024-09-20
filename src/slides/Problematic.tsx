@@ -22,6 +22,10 @@ import incrementalStep4 from "@/assets/incremental-step-4.png";
 import incrementalStep5 from "@/assets/incremental-step-5.png";
 import incrementalStep6 from "@/assets/incremental-step-6.png";
 import incrementalStep7 from "@/assets/incremental-step-7.png";
+import eCommerceCustomerHistory from "@/assets/e-commerce-customer-history.png";
+import eCommerceCustomerList from "@/assets/e-commerce-customer-list.png";
+import eCommerceCustomer1 from "@/assets/e-commerce-customer-1.png";
+import eCommerceCustomer2 from "@/assets/e-commerce-customer-2.png";
 import electricity from "@/assets/electricity.jpg";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MswWrapper } from "@/msw/MswWrapper";
@@ -46,8 +50,7 @@ const MyTodo = () => {
 export const Problematic = () => (
   <>
     <SlideLayout.Section>
-      <Heading>Problématique </Heading>
-      <Text>YATA! Yet Another Todolist App</Text>
+      <Heading>YATA! Yet Another Todolist App</Heading>
     </SlideLayout.Section>
 
     <Slide backgroundImage={`url(${todoListPostIt})`}>
@@ -71,10 +74,9 @@ export const Problematic = () => (
     <Slide>
       <Heading>Un utilisateur peut</Heading>
       <UnorderedList>
-        <ListItem>Voir la liste des tâches à réaliser</ListItem>
         <ListItem>Ajouter une tâche</ListItem>
+        <ListItem>Voir la liste des tâches à réaliser</ListItem>
         <ListItem>Marquer une tâche comme réalisée</ListItem>
-        <ListItem>Difficulté à partager des composants</ListItem>
         <ListItem>Supprimer une tâche</ListItem>
       </UnorderedList>
       <Notes>
@@ -234,6 +236,53 @@ export const Problematic = () => (
         me convient pas, je dois modifier mon composant
       </Notes>
     </Slide>
+    <Slide backgroundImage="url(https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDBpdzRoNHl4bTRwMnpoeGV3N3lia3I1OW1naDl5emo4cTQzNWN3ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btPCcdNniyf0ArS/giphy.gif)">
+      <Notes>
+        Ici nous sommes dans une application assez simple, mais imaginez une
+        grosse application comme un e-commerce
+      </Notes>
+    </Slide>
+    <Slide>
+      <div className="flex justify-center items-center align-middle h-lvh">
+        <Stepper
+          alwaysVisible
+          values={[
+            eCommerceCustomerHistory,
+            eCommerceCustomerList,
+            eCommerceCustomer1,
+            eCommerceCustomer2,
+          ]}
+        >
+          {(value) => <Image src={value} />}
+        </Stepper>
+      </div>
+      <Notes>
+        Ici je veux développer le composant History qui apparait dans le détail
+        d'un utilisateur. Pour le développer, je dois naviguer dans
+        l'application, trouver un utilisateur avec un historique, et le tester.
+      </Notes>
+    </Slide>
+    <Slide backgroundImage={`url(${electricity})`}>
+      <FlexBox height="100%" justifyContent="center" alignItems="end">
+        <Text fontSize={20}>
+          Photo de{" "}
+          <a href="https://unsplash.com/fr/@framesforyourheart?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+            Frames For Your Heart
+          </a>{" "}
+          sur{" "}
+          <a href="https://unsplash.com/fr/photos/fils-enduits-jaunes-bleus-et-noirs-iOLHAIaxpDA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+            Unsplash
+          </a>
+        </Text>
+      </FlexBox>
+      <Notes>
+        Pour développer un composant, je dois naviguer dans toute l'application
+        pour trouver ce dernier et le tester, ainsi que toute ces variantes. Et
+        plus le nombre de composants augmente, plus il faudra naviguer dans
+        l'application pour les trouver. Le problème c'est que les composants
+        sont dépendants de l'application.
+      </Notes>
+    </Slide>
     <Slide>
       <Heading>Inconvénients</Heading>
       <UnorderedList>
@@ -263,34 +312,6 @@ export const Problematic = () => (
           </li>
           <li>Des incohérences en terme de design pourraient survenir,</li>
         </ul>
-      </Notes>
-    </Slide>
-    <Slide backgroundImage="url(https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDBpdzRoNHl4bTRwMnpoeGV3N3lia3I1OW1naDl5emo4cTQzNWN3ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btPCcdNniyf0ArS/giphy.gif)">
-      <Notes>
-        Ici nous sommes dans une application assez simple, mais imaginez une
-        grosse application ou une bibliothèque de composants ? La maintenabilité
-        sera sans doute hardue
-      </Notes>
-    </Slide>
-    <Slide backgroundImage={`url(${electricity})`}>
-      <FlexBox height="100%" justifyContent="center" alignItems="end">
-        <Text fontSize={20}>
-          Photo de{" "}
-          <a href="https://unsplash.com/fr/@framesforyourheart?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-            Frames For Your Heart
-          </a>{" "}
-          sur{" "}
-          <a href="https://unsplash.com/fr/photos/fils-enduits-jaunes-bleus-et-noirs-iOLHAIaxpDA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-            Unsplash
-          </a>
-        </Text>
-      </FlexBox>
-      <Notes>
-        À mesure que les front-ends se développent, le nombre de composants
-        gonfle. Les projets matures peuvent contenir des centaines de composants
-        qui produisent des milliers de variations. Pour développer un composant,
-        je dois naviguer dans toute l'application pour trouver ce dernier et le
-        tester, ainsi que toute ces variantes.
       </Notes>
     </Slide>
   </>

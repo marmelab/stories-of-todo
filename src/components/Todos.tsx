@@ -3,7 +3,6 @@ import { DueDateTimeInput } from "@components/DueDateTimeInput/DueDateTimeInput"
 import { TitleInput } from "@components/TitleInput/TitleInput";
 import { List } from "@components/List/List";
 import { PrioritySelectInput } from "@components/PrioritySelectInput/PrioritySelectInput";
-import { Toast } from "@components/Toast/Toast";
 import { useCreateTodo } from "@services/mutations";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -39,7 +38,6 @@ export const Todos = () => {
       </FormProvider>
       <div className="divider" />
       <List />
-      <Toast />
     </>
   );
 };
