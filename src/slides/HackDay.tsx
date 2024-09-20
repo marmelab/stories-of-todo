@@ -79,32 +79,6 @@ export const HackDay = () => (
       </Notes>
     </Slide>
     <Slide>
-      <CodePane language="yaml">
-        {`
-          pwa:
-              image: \${IMAGES_PREFIX:-}storybook-pwa
-              build:
-                context: .
-                target: dev
-              environment:
-                ENTRYPOINT: \${ENTRYPOINT:-https://localhost}
-              volumes:
-                - .:/srv/app
-                - pwa_node_modules:/srv/app/node_modules
-              healthcheck:
-                test: ["CMD", "curl", "-f", "http://127.0.0.1:3000"]
-                interval: 10s
-                timeout: 10s
-                retries: 20
-                start_period: 20s
-              ports:
-                - target: 3000
-                  published: \${PWA_PORT:-3000}
-        `}
-      </CodePane>
-      <Notes>À coup de Docker</Notes>
-    </Slide>
-    <Slide>
       <CodePane language="typescript">
         {`
           import type { Meta, StoryObj } from '@storybook/react';
@@ -135,7 +109,33 @@ export const HackDay = () => (
           };
         `}
       </CodePane>
-      <Notes>de Storybook</Notes>
+      <Notes>À coup de Storybook</Notes>
+    </Slide>
+    <Slide>
+      <CodePane language="yaml">
+        {`
+          pwa:
+              image: \${IMAGES_PREFIX:-}storybook-pwa
+              build:
+                context: .
+                target: dev
+              environment:
+                ENTRYPOINT: \${ENTRYPOINT:-https://localhost}
+              volumes:
+                - .:/srv/app
+                - pwa_node_modules:/srv/app/node_modules
+              healthcheck:
+                test: ["CMD", "curl", "-f", "http://127.0.0.1:3000"]
+                interval: 10s
+                timeout: 10s
+                retries: 20
+                start_period: 20s
+              ports:
+                - target: 3000
+                  published: \${PWA_PORT:-3000}
+        `}
+      </CodePane>
+      <Notes>de Docker</Notes>
     </Slide>
     <Slide>
       <CodePane language="yaml">

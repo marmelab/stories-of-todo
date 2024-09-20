@@ -63,16 +63,20 @@ export const HowTo = () => (
       <Heading textAlign="left" margin="0 0">
         Storybook
       </Heading>
-      <div className="flex ">
+      <div className="flex justify-center">
         <Image src={storybookStats} />
-        <Image src={storybookUsage} />
       </div>
       <Notes>
         L'outil Storybook va nous fournir un environnement de développement
         idéal pour développer nos composants de manière isolée. Comme vous le
-        voyez, Storybook est utilisé dans de nombreux projet et est activement
-        maintenu
+        voyez, Storybook est activement maintenu
       </Notes>
+    </Slide>
+    <Slide>
+      <div className="flex justify-center">
+        <Image src={storybookUsage} />
+      </div>
+      <Notes>est utilisé dans de nombreux projet</Notes>
     </Slide>
     <SlideLayout.BigFact>Avantages</SlideLayout.BigFact>
     <Slide>

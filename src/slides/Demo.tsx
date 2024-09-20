@@ -35,9 +35,15 @@ export const Demo = () => (
         </li>
         <li>AJouter une variante à la story Countdwon</li>
         <li>AJouter une variante à la story Item</li>
+        <li>Montrer TodoList connectée à l'API.</li>
         <li>
-          Montrer la doc de l'API puis montrer l'application TodoList connectée
-          à l'API.
+          Montrer le{" "}
+          <a
+            href="https://react-admin-storybook-marmelab.vercel.app/"
+            target="_blank"
+          >
+            Storybook de react-admin
+          </a>
         </li>
       </ul>
     </Notes>

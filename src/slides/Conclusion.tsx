@@ -1,6 +1,7 @@
 import {
   Box,
   Heading,
+  Image,
   ListItem,
   Notes,
   Slide,
@@ -12,6 +13,7 @@ import contrib1 from "./contrib-method-1.md";
 import contrib2 from "./contrib-method-2.md";
 import "github-markdown-css/github-markdown-dark.css";
 import background from "@/assets/background-0.jpg";
+import apiPlatformRelease from "@/assets/api-platform-admin-release.png";
 
 export const Conclusion = () => (
   <>
@@ -53,6 +55,15 @@ export const Conclusion = () => (
       <Heading>docker compose up</Heading>
       <ReactMarkdown className="markdown-body" children={contrib2} />
       <Notes>À un simple docker compose up</Notes>
+    </Slide>
+    <Slide>
+      <Heading>api-platform/admin v4</Heading>
+      <Image src={apiPlatformRelease} />
+      <Notes>
+        Cet été nous en avons sortie la version 5 de react-admin et nous en
+        avons profiter pour mettre à jour api-platform/admin. Vous pourrez
+        trouvez la release d'api-platfom/admin sur le dépôt github
+      </Notes>
     </Slide>
   </>
 );

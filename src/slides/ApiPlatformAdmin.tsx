@@ -44,7 +44,7 @@ export const ApiPlatformAdmin = () => (
         le vocabulaire Hydra Core, exposant une documentation OpenAPI ou
         d'autres formats de spécification d'API pris en charge par
         @api-platform/api-doc-parser. Cette application est développée sur la
-        base de React-admin.
+        base de React-admin. Montrer la doc de l'api ainsi que l'admin
       </Notes>
     </Slide>
     <Slide padding="0 0 0" backgroundImage={`url(${reactAdmin})`}>
